@@ -7,6 +7,8 @@ gem 'jquery-rails'
 gem 'haml-rails'
 gem 'jquery-rails'
 
+gem 'http-cookie'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -20,8 +22,8 @@ group :development, :test do
   gem "rails-erd"
   gem 'erb2haml' # then run: rake haml:replace_erbs
   gem 'pry-rails'
-  gem 'pry-byebug'
-  gem 'pry-stack_explorer'
+  # gem 'pry-byebug'
+  # gem 'pry-stack_explorer'
   gem 'annotate'
   gem 'quiet_assets'
   gem 'better_errors'
