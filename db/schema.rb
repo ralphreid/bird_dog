@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131206154858) do
+ActiveRecord::Schema.define(:version => 20131209194850) do
 
   create_table "properties", :force => true do |t|
     t.string   "source"
@@ -23,8 +23,9 @@ ActiveRecord::Schema.define(:version => 20131206154858) do
     t.text     "image_listing"
     t.text     "listing_blurb"
     t.text     "arrange_view_link"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.integer  "property_source_id"
   end
 
 end
