@@ -24,7 +24,7 @@ namespace :importio do
             property_source_id = /property_id=(\d*)/.match p.property_page
             p.property_source_id = property_source_id[1]
             p.source = 'importio'
-            p.type = 'to_rent'
+            p.type_listing = 'to rent'
             
             # p.rent = result['rent']
             p.rent_frequency = result["rent_frequency"]

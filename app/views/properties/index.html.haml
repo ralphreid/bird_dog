@@ -1,0 +1,25 @@
+.container
+  %table.table.table-striped
+    %tr
+      %th source
+      %th type_listing
+      %th rent
+      %th rent_frequency
+      %th property_page
+      %th terms
+      %th image_listing
+      %th listing_blurb
+      %th arrange_view_link  
+      %th property_source_id
+    - @properties.each do |property|
+      %tr  
+        %td=property.source
+        %td=property.type_listing
+        %td=property.rent
+        %td=property.rent_frequency
+        %td=link_to 'link', property.property_page
+        %td=property.terms
+        %td=property.image_listing
+        %td=property.listing_blurb
+        %td=property.arrange_view_link  
+        %td=property.property_source_id
