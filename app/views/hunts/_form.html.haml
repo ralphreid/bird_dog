@@ -1,12 +1,11 @@
-= semantic_form_for @street do |f|
+= semantic_form_for @hunt do |f|
 
   = f.actions do
     = f.action :submit, :as => :button
     = f.action :cancel, :as => :link
     
-  = f.inputs :name => 'Street' do
+  = f.inputs :name => 'Hunt' do
     = f.label :name
     = f.input :name
 
-    = f.label :postcode
-    = f.input :postcode
+   

@@ -1,0 +1,18 @@
+
+= big_button_link_to 'Add Hunt', new_hunt_path
+%br
+%br
+%table.table.table-striped
+  %tr
+    %th name
+    %th
+    
+  - @hunts.each do |hunt|
+    %tr  
+      %td=hunt.name
+      %td
+        =button_group do
+          =button_link_to "Show", hunt
+          =button_link_to "Edit", edit_hunt_path(hunt)
+          =negative_button_link_to "Destroy", hunt, :confirm => 'Are you sure?', :method => :delete
+
