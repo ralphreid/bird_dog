@@ -1,0 +1,16 @@
+= semantic_form_for @properties do |f|
+  = f.actions do
+    = f.action :submit, :as => :button
+    = f.action :cancel, :as => :link
+  = f.inputs :name => 'New' do
+    = f.label :source
+    = f.input :source
+    = f.input :type_listing
+    = f.input :rent
+    = f.input :rent_frequency
+    / = f.input :property_page
+    / = f.input :terms
+    / = f.input :image_listing
+    / = f.input :listing_blurb
+    / = f.input :arrange_view_link  
+    = f.input :property_source_id
