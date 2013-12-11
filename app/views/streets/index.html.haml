@@ -1,0 +1,20 @@
+
+= big_button_link_to 'Add Street', new_street_path
+%br
+%br
+%table.table.table-striped
+  %tr
+    %th name
+    %th postcode
+    %th
+    
+  - @streets.each do |street|
+    %tr  
+      %td=street.name
+      %td=street.postcode
+      %td
+        =button_group do
+          =button_link_to "Show", street
+          =button_link_to "Edit", edit_street_path(street)
+          =negative_button_link_to "Destroy", street, :confirm => 'Are you sure?', :method => :delete
+
