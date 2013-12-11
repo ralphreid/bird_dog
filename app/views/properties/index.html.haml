@@ -1,4 +1,7 @@
 .container
+  = big_button_link_to 'Add Property', new_property_path
+  %br
+  %br
   %table.table.table-striped
     %tr
       %th source
@@ -12,6 +15,7 @@
       %th arrange_view_link  
       %th property_source_id
       %th
+      
     - @properties.each do |property|
       %tr  
         %td=property.source
@@ -24,4 +28,9 @@
         %td=property.listing_blurb
         %td=property.arrange_view_link  
         %td=property.property_source_id
-        %td=button_link_to "edit", edit_property_path(property)
+        %td
+          =button_group do
+            =button_link_to "Show", property
+            =button_link_to "Edit", edit_property_path(property)
+            =negative_button_link_to "Destroy", property, :confirm => 'Are you sure?', :method => :delete
+

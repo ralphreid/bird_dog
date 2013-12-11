@@ -4,4 +4,8 @@ class PropertiesController < ApplicationController
     @properties = Property.all
   end
 
+  def new
+    @properties = Property.new
+  end
+
 end
