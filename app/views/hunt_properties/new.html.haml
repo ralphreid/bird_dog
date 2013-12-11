@@ -1,0 +1,12 @@
+%h2 New Hunt property
+
+= select_tag :hunt_id, options_from_collection_for_select(@hunts, "id", "name")
+
+%button#submit_hunt_selection Create Hunt
+%table.table
+  - @properties.each do |property|
+    %tr
+      %td
+        = check_box :property_select_checkbox, property.id,
+        {class: "property_checkbox", "data-property-id" => property.id}
+      %td= property.property_source_id

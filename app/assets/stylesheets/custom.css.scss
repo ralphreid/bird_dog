@@ -1,0 +1,13 @@
+.menu-item{
+  background-color: silver;
+  width: 70px;
+  height: 70px;
+  display: block;
+  margin: 5px;
+  #home{
+    //this background image
+  }
+  &.selected{
+    background-color: red;
+  }
+}

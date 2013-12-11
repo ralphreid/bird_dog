@@ -40,8 +40,17 @@
     - flash.each do |name, message|
       %div(class="flash-message flash-#{name}")
         = message
-    .container     
-      = yield
+    .container  
+
+      .row
+        .col-md-1
+          - menu_pages.each do |page|
+            -if current_path == page[1]
+              %a.menu-item.selected{href: page[1], id:page[0]}= page[0]
+            - else
+              %a.menu-item{href: page[1], id:page[0]}= page[0]
+        .col-md-11
+          = yield
 
     .footer.navbar.navbar-default.navbar-static-bottom
       =image_tag("https://www.codeship.io/projects/b5c511d0-43d9-0131-5821-0a52a98081fa/status?branch=master")
