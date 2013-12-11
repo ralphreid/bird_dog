@@ -1,8 +1,8 @@
 %h2 New Hunt property
 
 = select_tag :hunt_id, options_from_collection_for_select(@hunts, "id", "name")
-
-%button#submit_hunt_selection Create Hunt
+= add_button_tag "Create Hunt", id: "submit_hunt_selection"
+/ %button#submit_hunt_selection Create Hunt
 %table.table
   - @properties.each do |property|
     %tr
