@@ -8,6 +8,7 @@ gem 'haml-rails'
 gem 'jquery-rails'
 gem 'http-cookie'
 gem 'devise'
+gem 'css3buttons', '0.9.5'
 
 
 # Gems used only for assets and not required

@@ -11,6 +11,7 @@
       %th listing_blurb
       %th arrange_view_link  
       %th property_source_id
+      %th
     - @properties.each do |property|
       %tr  
         %td=property.source
@@ -23,3 +24,4 @@
         %td=property.listing_blurb
         %td=property.arrange_view_link  
         %td=property.property_source_id
+        %td=button_link_to "edit", edit_property_path(property)
