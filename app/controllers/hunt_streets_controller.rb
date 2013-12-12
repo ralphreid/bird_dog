@@ -1,7 +1,6 @@
 class HuntStreetsController < ApplicationController
   def new
-    @hunts = Hunt.all
-    # @hunts = current_user.hunts
+    @hunts = current_user.hunts
     @streets = Street.all
   end
 
