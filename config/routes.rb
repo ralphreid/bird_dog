@@ -7,6 +7,7 @@ BirdDog::Application.routes.draw do
   resources :streets
   resources :hunts
   resources :hunt_properties, only: [:new, :create]
+  resources :hunt_streets, only: [:new, :create]
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

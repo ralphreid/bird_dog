@@ -1,5 +1,5 @@
 $ ->
-  $("#submit_hunt_selection").on "click", ->
+  $("#submit_hunt_property_selection").on "click", ->
     checked = $(".property_checkbox:checked");
     ids = []
     hunt_id = $("#hunt_id").val()
