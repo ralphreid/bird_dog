@@ -1,5 +1,17 @@
 BirdDog::Application.routes.draw do
-  devise_for :users
+  devise_for  :users,
+              :controllers => {
+                :registrations => 'users'
+                # :omniauth_callbacks => "omniauth_callbacks"
+              }
+              
+  devise_scope :user do
+    resources :users, :only => [:index]
+    get "login", :to => "devise/sessions#new"
+    get "sign_up", :to => "users#new"
+    get "logout", :to => "devise/sessions#destroy"
+    # investigate the need for this
+  end
 
   root :to => 'home#index'
 
@@ -8,6 +20,9 @@ BirdDog::Application.routes.draw do
   resources :hunts
   resources :hunt_properties, only: [:new, :create]
   resources :hunt_streets, only: [:new, :create]
+ 
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
