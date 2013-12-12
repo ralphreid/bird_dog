@@ -1,7 +1,7 @@
 class HuntsController < ApplicationController
 
   def index
-    @hunts = Hunt.all
+    @hunts = current_user.hunts
   end
 
   def new
@@ -9,9 +9,9 @@ class HuntsController < ApplicationController
   end
 
   def create
-    @hunt = Hunt.new(params[:hunt])
+    @hunt = current_user.hunts.new(params[:hunt])
     if @hunt.save
-      redirect_to @hunt, notice: 'Hunt was successfully created!'
+      redirect_to hunts_path, notice: 'Hunt was successfully created!'
     else
       flash.now[:alert] = 'Hunt was NOT created!'
       render :new

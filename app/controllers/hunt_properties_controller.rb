@@ -1,7 +1,7 @@
 class HuntPropertiesController < ApplicationController
   def new
-    @hunts = Hunt.all
-    # @hunts = current_user.hunts
+    # @hunts = Hunt.all
+    @hunts = current_user.hunts
     @properties = Property.all
   end
 
