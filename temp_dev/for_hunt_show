@@ -1,0 +1,18 @@
+for hunt show
+
+hunts = u.hunts
+
+hunts.each do |hunt|
+  hunt_streets = hunt.hunt_streets
+  puts hunt_streets
+  hunt_streets.each do |hunt_street|
+    puts hunt_street.street.name
+  end
+end
+
+hunts.each do |hunt|
+  puts hunt.name
+  hunt.hunt_streets.each do |hunt_street|
+    puts hunt_street.street
+  end
+end

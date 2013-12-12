@@ -24,8 +24,8 @@
               =button_link_to "Edit", edit_hunt_path(hunt)
               =negative_button_link_to "Destroy", hunt, :confirm => 'Are you sure?', :method => :delete
   #hunt_properties.tab-pane
-    
+    = render partial: "hunt_table", locals: {hunts: @hunts_properties}
   #hunt_streets.tab-pane
-    %h1 HUNTS STREETS
+    = render partial: "hunt_table", locals: {hunts: @hunts_streets}
   
 
