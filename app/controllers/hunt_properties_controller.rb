@@ -12,5 +12,7 @@ class HuntPropertiesController < ApplicationController
         property_id: property_id
       })
     end
+
+    render nothing: true
   end
 end
