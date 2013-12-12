@@ -117,6 +117,7 @@ GEM
     mime-types (1.25.1)
     mini_portile (0.5.2)
     multi_json (1.8.2)
+    newrelic_rpm (3.7.0.177)
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
     orm_adapter (0.5.0)
@@ -236,6 +237,7 @@ DEPENDENCIES
   http-cookie
   jquery-rails
   meta_request
+  newrelic_rpm
   pg
   pry-rails
   quiet_assets
