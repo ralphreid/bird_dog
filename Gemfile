@@ -11,7 +11,7 @@ gem 'devise'
 gem 'css3buttons', '0.9.5'
 gem 'formtastic'
 
-gem 'zoopla'
+# gem 'zoopla'
 
 
 # Gems used only for assets and not required
