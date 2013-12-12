@@ -16,3 +16,12 @@ hunts.each do |hunt|
     puts hunt_street.street
   end
 end
+
+
+hunts_properties = u.hunts.map{ |hunt| hunt.hunt_properties }.flatten
+
+result = hunts_properties.map{ |hp| [Hunt.find(hp.hunt_id),Property.find(hp.property_id)] }
+
+
+
+

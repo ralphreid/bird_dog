@@ -3,6 +3,8 @@ class HuntsController < ApplicationController
   def index
     @hunts = current_user.hunts
     @hunts_properties = current_user.hunts.map{ |hunt| hunt.hunt_properties }.flatten
+
+
     @hunts_streets = current_user.hunts.map{ |hunt| hunt.hunt_streets }.flatten
   end
 
