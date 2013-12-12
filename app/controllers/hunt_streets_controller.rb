@@ -7,7 +7,7 @@ class HuntStreetsController < ApplicationController
 
   def create
     params[:ids].each do |street_id|
-      @hunt_street = HuntProperty.create({
+      @hunt_street = HuntStreet.create({
         hunt_id: params[:hunt_id],
         street_id: street_id
       })
