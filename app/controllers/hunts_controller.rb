@@ -2,10 +2,8 @@ class HuntsController < ApplicationController
 
   def index
     @hunts = current_user.hunts
-    @hunts_properties = current_user.hunts.map{ |hunt| hunt.hunt_properties }.flatten
-
-
-    @hunts_streets = current_user.hunts.map{ |hunt| hunt.hunt_streets }.flatten
+    @hunts_properties = hunt_select(:properties)
+    @hunts_streets = hunt_select(:streets)
   end
 
   def new
@@ -46,4 +44,14 @@ class HuntsController < ApplicationController
     redirect_to hunts_path
   end
 
+
+private
+  def hunt_select(which = nil)
+    function_name = ["hunt", which.to_s].join("_")
+    current_user.hunts.map do |hunt|
+      #this will either hunt_properties or hunt_streets
+      # think hunt.hunt_properties || hunt.hunt_streets
+      hunt.send(function_name) 
+    end.flatten.uniq_by{ |obj| obj.hunt_id}
+  end
 end

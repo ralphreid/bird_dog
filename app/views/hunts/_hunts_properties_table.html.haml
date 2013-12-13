@@ -2,11 +2,13 @@
   %tr
     %th name
     %th
-    
+  = @hunts_properties.inspect
   - @hunts_properties.each do |hunt|
     %tr  
       %td
         =hunt.hunt.name
         %ul
           - hunt.hunt.properties.each do |property|
-            %li= property.property_source_id
+            %li
+              = property.property_source_id
+              = property.inspect
