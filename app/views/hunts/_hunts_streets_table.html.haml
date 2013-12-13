@@ -1,0 +1,13 @@
+%table.table.table-striped
+  %tr
+    %th name
+    %th
+  = @hunts_steets.inspect
+  - @hunts_streets.each do |hunt|
+    %tr  
+      %td
+        =hunt.hunt.name
+        %ul
+          - hunt.hunt.streets.each do |street|
+            %li
+              = street.inspect
