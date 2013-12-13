@@ -1,0 +1,90 @@
+rent example
+http://api.zoopla.co.uk/api/v1/property_listings.json?listing_status=rent&postcode=n4&api_key=sjrsvf26ssqkuzff3ash5qwk
+sale example
+http://api.zoopla.co.uk/api/v1/property_listings.json?postcode=n4&api_key=sjrsvf26ssqkuzff3ash5qwk
+
+
+query = "http://api.zoopla.co.uk/api/v1/property_listings.json?postcode=n4&api_key=#{ENV['ZOOPLA_KEY']}"
+query = "http://api.zoopla.co.uk/api/v1/property_listings.json?postcode=n4&api_key=#{ENV['ZOOPLA_KEY']}&page_size=100"
+query = "http://api.zoopla.co.uk/api/v1/property_listings.json?postcode=n4&page_size=100&api_key=sjrsvf26ssqkuzff3ash5qwk"
+query = "http://api.zoopla.co.uk/api/v1/property_listings.json?postcode=n4&page_size=100&api_key=#{ENV['ZOOPLA_KEY']}"
+
+
+
+response = HTTParty.get(query)
+listings = response["listing"]
+result_count = response["result_count"]
+
+
+page_count = (result_count / 100.0).ceil 
+page_count.times do |page_index|
+  page_number = page_index + 1
+  query = "http://api.zoopla.co.uk/api/v1/property_listings.json?postcode=n4&page_size=100&page_number=#{page_number}&api_key=#{ENV['ZOOPLA_KEY']}"
+  response = HTTParty.get(query)
+  listings = response["listing"]
+  listings.each do |listing|
+    p = Property.new 
+    p.source = 'zoopla'
+    p.save
+  end
+end
+
+
+
+["image_caption",
+ 
+ rental_prices: {
+  per_week: "1134",
+  accurate: "per_week",
+  per_month: "4914"
+  },
+
+ "status",
+ "num_floors",
+ "listing_status",
+ "num_bedrooms",
+ "agent_name",
+ "latitude",
+ "agent_address",
+ "num_recepts",
+ "property_type",
+ "country",
+ "longitude",
+ "first_published_date",
+ "displayable_address",
+ "street_name",
+ "num_bathrooms",
+ "thumbnail_url",
+ "description",
+ "post_town",
+ "details_url",
+ "agent_logo",
+ 
+ price_change: [
+    {
+    date: "2012-06-11 19:06:13",
+    price: "1680"
+    },
+    {
+    date: "2012-06-13 19:05:05",
+    price: "1134"
+    }
+    ],
+
+ "short_description",
+ "agent_phone",
+ "outcode",
+ "image_url",
+ "last_published_date",
+ "county",
+ "price",
+ "listing_id"]
+
+ search result
+ country: "England",
+result_count: 500,
+longitude: -0.104687,
+area_name: " N4",
+
+county: "London",
+bounding_box:

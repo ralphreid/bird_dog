@@ -20,14 +20,14 @@ namespace :importio do
           message["data"]["results"].each do |result|
             p = Property.new 
 
-            p.property_page = result["property_page"]
-            property_source_id = /property_id=(\d*)/.match p.property_page
-            p.property_source_id = property_source_id[1]
+            # p.property_page = result["property_page"]
+            # property_source_id = /property_id=(\d*)/.match p.property_page
+            # p.property_source_id = property_source_id[1]
             p.source = 'importio'
-            p.type_listing = 'to rent'
+            # p.type_listing = 'to rent'
             
-            # p.rent = result['rent']
-            p.rent_frequency = result["rent_frequency"]
+            
+            # p.rent_frequency = result["rent_frequency"]
 
             p.save!
           end

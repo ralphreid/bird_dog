@@ -240,7 +240,6 @@ DEPENDENCIES
   jquery-rails
   meta_request
   newrelic_rpm
-  nokogiri
   pg
   pry-rails
   quiet_assets

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131210195650) do
+ActiveRecord::Schema.define(:version => 20131213131344) do
 
   create_table "hunt_properties", :force => true do |t|
     t.integer  "property_id"
@@ -41,17 +41,8 @@ ActiveRecord::Schema.define(:version => 20131210195650) do
 
   create_table "properties", :force => true do |t|
     t.string   "source"
-    t.integer  "rent"
-    t.string   "rent_frequency"
-    t.text     "property_page"
-    t.string   "terms"
-    t.text     "image_listing"
-    t.text     "listing_blurb"
-    t.text     "arrange_view_link"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
-    t.integer  "property_source_id"
-    t.string   "type_listing"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "streets", :force => true do |t|

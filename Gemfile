@@ -11,7 +11,8 @@ gem 'devise'
 gem 'css3buttons', '0.9.5'
 gem 'formtastic'
 gem 'httparty'
-gem 'nokogiri'
+
+# gem 'nokogiri'
 
 # gem 'zoopla'
 
