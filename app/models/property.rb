@@ -4,4 +4,6 @@ class Property < ActiveRecord::Base
   has_many :hunt_properties
   has_many :hunts, :through => :hunt_properties
 
+
+  
 end

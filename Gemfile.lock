@@ -99,6 +99,9 @@ GEM
       ruby_parser (~> 3.1.1)
     http-cookie (1.0.2)
       domain_name (~> 0.5)
+    httparty (0.12.0)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
     i18n (0.6.9)
     journey (1.0.4)
     jquery-rails (3.0.4)
@@ -116,6 +119,7 @@ GEM
     mime-types (1.25.1)
     mini_portile (0.5.2)
     multi_json (1.8.2)
+    multi_xml (0.5.5)
     newrelic_rpm (3.7.0.177)
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
@@ -232,9 +236,11 @@ DEPENDENCIES
   formtastic
   haml-rails
   http-cookie
+  httparty
   jquery-rails
   meta_request
   newrelic_rpm
+  nokogiri
   pg
   pry-rails
   quiet_assets
