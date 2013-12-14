@@ -25,11 +25,13 @@ page_count.times do |page_index|
   listings.each do |listing|
     p = Property.new 
     p.source = 'zoopla'
+    p.floor_plan = listing["floor_plan"]
     p.save
   end
 end
 
 
+floor_plan: []
 
 ["image_caption",
  
@@ -37,7 +39,9 @@ end
   per_week: "1134",
   accurate: "per_week",
   per_month: "4914"
-  },
+  }
+
+
 
  "status",
  "num_floors",
