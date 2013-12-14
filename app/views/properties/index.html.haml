@@ -22,7 +22,7 @@
         %td=property.displayable_address
         %td=property.property_type
         %td=property.num_bedrooms
-        %td=link_to 'link', property.details_url
+        %td=link_to 'link', property.details_url, :target => '_blank'
         %td
           =button_group do
             =button_link_to "Show", property
