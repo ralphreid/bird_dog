@@ -41,9 +41,37 @@ ActiveRecord::Schema.define(:version => 20131213144838) do
 
   create_table "properties", :force => true do |t|
     t.string   "source"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.text     "floor_plan"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+    t.integer  "listing_id"
+    t.string   "status"
+    t.string   "listing_status"
+    t.integer  "num_recepts"
+    t.integer  "price"
+    t.text     "details_url"
+    t.text     "image_url"
+    t.string   "image_caption"
+    t.text     "thumbnail_url"
+    t.text     "description"
+    t.text     "short_description"
+    t.string   "displayable_address"
+    t.string   "post_town"
+    t.string   "street_name"
+    t.string   "county"
+    t.decimal  "latitude"
+    t.decimal  "longitude"
+    t.string   "outcode"
+    t.string   "property_type"
+    t.integer  "num_floors"
+    t.integer  "num_bedrooms"
+    t.integer  "num_bathrooms"
+    t.string   "country"
+    t.string   "agent_name"
+    t.string   "agent_phone"
+    t.string   "agent_address"
+    t.text     "agent_logo"
+    t.datetime "first_published_date"
+    t.datetime "last_published_date"
   end
 
   create_table "streets", :force => true do |t|
