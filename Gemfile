@@ -11,6 +11,7 @@ gem 'devise'
 gem 'css3buttons', '0.9.5'
 gem 'formtastic'
 gem 'httparty'
+gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-rails.git'
 
 # gem 'nokogiri'
 
