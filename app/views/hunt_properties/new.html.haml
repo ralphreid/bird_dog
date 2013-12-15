@@ -8,4 +8,6 @@
       %td
         = check_box :property_select_checkbox, property.id,
         {class: "property_checkbox", "data-property-id" => property.id}
-      %td= property.property_source_id
+      %td= property.displayable_address
+      %td= property.listing_id
+      %td= property.source

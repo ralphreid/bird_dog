@@ -10,8 +10,8 @@ class HuntStreetsController < ApplicationController
         hunt_id: params[:hunt_id],
         street_id: street_id
       })
+    end
 
     render nothing: true
-    end
   end
 end
