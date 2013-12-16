@@ -8,13 +8,14 @@ ALL STREET HUNT RACE PLOT MAP IMAGE HERE - POSSIBLE COLORBOX
   = @hunts_steets.inspect
   - @hunts_streets.each do |hunt|
     %tr  
-      %td
+      %td.col-md-6
         =hunt.hunt.name
         %ul
           - hunt.hunt.streets.each do |street|
             %li
               = street.inspect
-      %td
-        THIS HUNT RACE MAP IMAGE HERE
+      %td.col-md-6
+        #hunts-maps-street-list
+
 
 

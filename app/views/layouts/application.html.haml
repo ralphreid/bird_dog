@@ -4,6 +4,7 @@
     %title BirdDog
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
+    = javascript_include_tag raw "https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_SIMPLE_KEY']}&sensor=false"
     = csrf_meta_tags
     / %script{src: "//maps.google.com/maps/api/js?v=3.13&sensor=false&libraries=geometry", type: "text/javascript"}
     / %script{src: "//google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js", type: "text/javascript"}
@@ -70,5 +71,6 @@
       Dev
       =image_tag("https://www.codeship.io/projects/b5c511d0-43d9-0131-5821-0a52a98081fa/status?branch=dev")
       =link_to "Model Diagram", root_path + "./erd.pdf"
+
 
 
