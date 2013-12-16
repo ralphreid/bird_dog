@@ -11,6 +11,8 @@ gem 'devise'
 gem 'css3buttons', '0.9.5'
 gem 'formtastic'
 gem 'httparty'
+gem 'rmagick', '2.13.2'
+gem 'carrierwave'
 
 
 # gem 'nokogiri'
