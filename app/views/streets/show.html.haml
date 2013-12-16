@@ -6,3 +6,6 @@ name:
 
 postcode:
 = @street.postcode
+
+- if @street.image_capture?
+  = image_tag @street.image_capture

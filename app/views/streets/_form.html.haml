@@ -5,6 +5,9 @@
     = f.action :cancel, :as => :link
     
   = f.inputs :name => 'Street' do
+    = f.label :image_capture
+    = f.file_field :image_capture
+
     = f.label :name
     = f.input :name
 
