@@ -14,7 +14,7 @@
       %th Address
       %th Property Type
       %th Bedrooms
-      %th 
+      %th Listing_id
       %th 
   %tbody
     - @properties.each do |property|
@@ -29,6 +29,7 @@
         %td=property.property_type
         %td=property.num_bedrooms
         %td=link_to 'link', property.details_url, :target => '_blank'
+        %td=property.listing_id
         %td
           =button_group do
             =button_link_to "Show", property

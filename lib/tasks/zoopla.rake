@@ -17,43 +17,43 @@ namespace :zoopla do
         response = HTTParty.get(query)
         listings = response["listing"]
         listings.each do |listing|
-          p = Property.new 
-          binding.pry
-          # p = Property.find_or_create(source: "zoopla")#etcc
-          # p.update_attributes({
 
-          # }) 
-          p.source = 'zoopla'
-          p.image_caption = listing['image_caption']
+          listing_id = listing['listing_id']
 
-          p.status = listing['status']
-          p.num_floors = listing['num_floors']
-          p.listing_status = listing['listing_status']
-          p.num_bedrooms = listing['num_bedrooms']
-          p.agent_name = listing['agent_name']
-          p.latitude = listing['latitude']
-          p.agent_address = listing['agent_address']
-          p.num_recepts = listing['num_recepts']
-          p.property_type = listing['property_type']
-          p.country = listing['country']
-          p.longitude = listing['longitude']
-          p.first_published_date = listing['first_published_date']
-          p.displayable_address = listing['displayable_address']
-          p.street_name = listing['street_name']
-          p.num_bathrooms = listing['num_bathrooms']
-          p.thumbnail_url = listing['thumbnail_url']
-          p.description = listing['description']
-          p.post_town = listing['post_town']
-          p.details_url = listing['details_url']
-          p.agent_logo = listing['agent_logo']
-          p.short_description = listing['short_description']
-          p.agent_phone = listing['agent_phone']
-          p.outcode = listing['outcode']
-          p.image_url = listing['image_url']
-          p.last_published_date = listing['last_published_date']
-          p.county = listing['county']
-          p.price = listing['price']
-          p.listing_id = listing['listing_id']
+          p = Property.find_or_create_by_listing_id_and_source(listing_id, 'zoopla')
+          
+          p.update_attributes(
+            source: 'zoopla',
+            image_caption: listing['image_caption'],
+            status: listing['status'],
+            num_floors: listing['num_floors'],
+            listing_status: listing['listing_status'],
+            num_bedrooms: listing['num_bedrooms'],
+            agent_name: listing['agent_name'],
+            latitude: listing['latitude'],
+            agent_address: listing['agent_address'],
+            num_recepts: listing['num_recepts'],
+            property_type: listing['property_type'],
+            country: listing['country'],
+            longitude: listing['longitude'],
+            first_published_date: listing['first_published_date'],
+            displayable_address: listing['displayable_address'],
+            street_name: listing['street_name'],
+            num_bathrooms: listing['num_bathrooms'],
+            thumbnail_url: listing['thumbnail_url'],
+            description: listing['description'],
+            post_town: listing['post_town'],
+            details_url: listing['details_url'],
+            agent_logo: listing['agent_logo'],
+            short_description: listing['short_description'],
+            agent_phone: listing['agent_phone'],
+            outcode: listing['outcode'],
+            image_url: listing['image_url'],
+            last_published_date: listing['last_published_date'],
+            county: listing['county'],
+            price: listing['price'],
+            listing_id: listing['listing_id']
+          ) 
 
           p.save!
         end
