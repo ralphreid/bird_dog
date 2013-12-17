@@ -1,5 +1,5 @@
 
-user = User.create :email => "jane@jane.com", :password => "555555555"
+user = User.create :email => "jane@jane.com", :password => "5555"
 
 hunt = Hunt.create(name: 'seeded test hunt')
 user.hunts << hunt
