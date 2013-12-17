@@ -59,14 +59,35 @@ class HuntsController < ApplicationController
   def add_by_url
     @property = Property.find_by_details_url params["url"]
     if @property
-
+      @hunt = Hunt.find(params[:id])
+      begin
+        @hunt.properties << @property
+        flash[:notice] = 'added'
+      rescue ActiveRecord::RecordInvalid
+        flash[:notice] = "already in hunt"
+      end
     else
-
+      handle_new_property_url params["url"]
     end
+    redirect_to hunt_path(@hunt)
   end
 
 
 private
+ 
+  def handle_new_property_url(url)
+    # in future see if url domain is supoorted for scraping
+    # for now, just redirect to new property form
+
+
+    # redirect to form toeh action that loads the properties new form
+
+    # other functions to build could be to test for harvested domain and redirect to importio to tune up a connector
+    # other function could be to serve the user a list of domains which need tuning
+    
+  end
+
+
   def hunt_select(which = nil)
     function_name = ["hunt", which.to_s].join("_")
     current_user.hunts.map do |hunt|

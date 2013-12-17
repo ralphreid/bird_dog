@@ -4,4 +4,6 @@ class HuntProperty < ActiveRecord::Base
   belongs_to :hunt
   belongs_to :property
 
+  validates :property_id, :uniqueness => { :scope => :hunt_id}
+
 end

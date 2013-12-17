@@ -6,5 +6,8 @@ source:
 = form_tag add_by_url_hunt_path(@hunt), method: :post do 
   = url_field_tag :url
   = submit_tag "Add Property URL", :name => nil
+
+- @hunt.properties.each do |property|
+  = link_to property.details_url
    
 

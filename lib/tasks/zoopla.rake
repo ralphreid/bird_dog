@@ -18,6 +18,7 @@ namespace :zoopla do
         listings = response["listing"]
         listings.each do |listing|
           p = Property.new 
+          binding.pry
           # p = Property.find_or_create(source: "zoopla")#etcc
           # p.update_attributes({
 

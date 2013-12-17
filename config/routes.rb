@@ -25,7 +25,7 @@ BirdDog::Application.routes.draw do
       post :add_property
     end
   end
-  resources :hunt_properties, only: [:new, :create]
+  # resources :hunt_properties, only: [:new, :create]
   resources :hunt_streets, only: [:new, :create]
 
  
