@@ -9,11 +9,12 @@ class Street < ActiveRecord::Base
   before_save :extract_geolocation
  
   def extract_geolocation
-    img = Magick::Image.read(image)[0] rescue nil
- 
+    img = Magick::Image.read(image_capture.file.file)[0] rescue nil
+    
     return unless img
     img_lat = img.get_exif_by_entry('GPSLatitude')[0][1].split(', ') rescue nil
     img_lng = img.get_exif_by_entry('GPSLongitude')[0][1].split(', ') rescue nil
+    
  
     lat_ref = img.get_exif_by_entry('GPSLatitudeRef')[0][1] rescue nil
     lng_ref = img.get_exif_by_entry('GPSLongitudeRef')[0][1] rescue nil
@@ -25,14 +26,14 @@ class Street < ActiveRecord::Base
  
     latitude = latitude * -1 if lat_ref == 'S'  # (N is +, S is -)
     longitude = longitude * -1 if lng_ref == 'W'   # (W is -, E is +)
- 
+    
     self.latitude = latitude
     self.longitude = longitude
 
     if geo = Geocoder.search("#{latitude},#{longitude}").first
       self.city = geo.city
-      self.state = geo.state
-      self.zipcode = geo.postal_code
+      # self.state = geo.state
+      self.postcode = geo.postal_code
     end
     
   end

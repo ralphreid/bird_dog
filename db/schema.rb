@@ -84,7 +84,6 @@ ActiveRecord::Schema.define(:version => 20131217105520) do
     t.decimal  "latitude"
     t.string   "city"
     t.string   "state"
-    t.string   "postal_code"
   end
 
   create_table "users", :force => true do |t|
