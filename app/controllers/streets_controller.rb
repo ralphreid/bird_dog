@@ -2,6 +2,7 @@ class StreetsController < ApplicationController
 
   def index
     @streets = Street.all
+    @hunts = current_user.hunts
   end
 
   def new

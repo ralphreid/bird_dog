@@ -40,15 +40,13 @@
               %li
                 =link_to 'Add a Hunt', new_hunt_path
               %li
-                =link_to 'Add a Property', new_property_path
-              / %li
-              /   =link_to 'Add a Property to a Hunt', new_hunt_property_path
+                =link_to 'Property Library', properties_path
               %li
-                =link_to 'Streets', streets_path
+                =link_to 'Add a Property', new_property_path
+              %li
+                =link_to 'Street Library', streets_path
               %li
                 =link_to 'Add a Street', new_street_path
-              %li
-                =link_to 'Add a Street to a Hunt', new_hunt_street_path
               %li.divider
               %li
                 =link_to 'Logout', logout_path

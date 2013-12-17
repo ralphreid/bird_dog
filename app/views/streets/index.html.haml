@@ -1,9 +1,11 @@
-
-= big_button_link_to 'Add Street', new_street_path
-%br
-%br
+.col-md-8
+  
+.col-md-4
+  = add_button_tag "Add Checked to a Hunt", id: "submit_hunt_street_selection"
+  = select_tag :hunt_id, options_from_collection_for_select(@hunts, "id", "name")
 %table.table.table-striped
   %tr
+    %th 
     %th name
     %th postcode
     %th Pic
@@ -11,6 +13,8 @@
     
   - @streets.each do |street|
     %tr  
+      %td= check_box :street_select_checkbox, street.id,
+        {class: "street_checkbox", "data-street-id" => street.id}
       %td=street.name
       %td=street.postcode
       %td= image_tag street.image_capture.thumb if street.image_capture? 

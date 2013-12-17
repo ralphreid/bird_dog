@@ -1,9 +1,8 @@
+.col-md-8
+  / = big_button_link_to 'Add Property', new_property_path
 .col-md-4
-.col-md-4
-  = big_button_link_to 'Add Property', new_property_path
-.col-md-4
+  = add_button_tag "Add Checked to a Hunt", id: "submit_hunt_property_selection"
   = select_tag :hunt_id, options_from_collection_for_select(@hunts, "id", "name")
-  = add_button_tag "Add to a Hunt", id: "submit_hunt_property_selection"
 %table.table.table-striped#properties_table
   %thead
     %tr

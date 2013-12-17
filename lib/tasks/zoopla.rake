@@ -18,10 +18,10 @@ namespace :zoopla do
         listings = response["listing"]
         listings.each do |listing|
 
-          listing_id = listing['listing_id']
+          details_url = listing['details_url']
 
-          p = Property.find_or_create_by_listing_id_and_source(listing_id, 'zoopla')
-          
+          p = Property.find_or_create_by_details_url_and_source(details_url, 'zoopla')
+
           p.update_attributes(
             source: 'zoopla',
             image_caption: listing['image_caption'],
@@ -54,12 +54,12 @@ namespace :zoopla do
             price: listing['price'],
             listing_id: listing['listing_id']
           ) 
-
-          p.save!
+          p.save!         
         end
       end
     rescue => e
       puts "somthing when wrong! #{e}"
     end
+    
   end
 end

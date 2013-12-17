@@ -44,6 +44,18 @@ class HuntsController < ApplicationController
     redirect_to hunts_path
   end
 
+  def add_street
+    hunt = Hunt.find params[:hunt_id]
+    params[:ids].each do |property_id|
+      @hunt_property = HuntProperty.create({
+        hunt_id: params[:hunt_id],
+        street_id: street_id
+      })
+    end
+
+    render nothing: true
+  end 
+
   def add_property
     hunt = Hunt.find params[:hunt_id]
     params[:ids].each do |property_id|
