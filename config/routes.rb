@@ -17,9 +17,14 @@ BirdDog::Application.routes.draw do
 
   resources :properties
   resources :streets
-  resources :hunts
+  resources :hunts do
+    member do 
+      post :add_by_url
+    end
+  end
   resources :hunt_properties, only: [:new, :create]
   resources :hunt_streets, only: [:new, :create]
+
  
 
 

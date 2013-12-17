@@ -1,5 +1,10 @@
-=button_link_to 'Back', hunts_path
+= button_link_to 'Back', hunts_path
 %br
 source:
 = @hunt.name
+
+= form_tag add_by_url_hunt_path(@hunt), method: :post do 
+  = url_field_tag :url
+  = submit_tag "Add Property URL", :name => nil
+   
 

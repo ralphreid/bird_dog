@@ -44,6 +44,20 @@ class HuntsController < ApplicationController
     redirect_to hunts_path
   end
 
+  def add
+    @hunt = Hunt.find(params[:id])
+    @hunt.properties << params[:property_id]
+  end
+
+  def add_by_url
+    @property = Property.find_by_details_url params["url"]
+    if @property
+
+    else
+
+    end
+  end
+
 
 private
   def hunt_select(which = nil)
