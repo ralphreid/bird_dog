@@ -99,6 +99,7 @@ GEM
     formatador (0.2.4)
     formtastic (2.2.1)
       actionpack (>= 3.0)
+    geocoder (1.1.8)
     haml (4.1.0.alpha.2)
       tilt
     haml-rails (0.4)
@@ -260,6 +261,7 @@ DEPENDENCIES
   faker
   fog
   formtastic
+  geocoder
   haml-rails
   http-cookie
   httparty

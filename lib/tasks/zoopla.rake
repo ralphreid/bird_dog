@@ -1,4 +1,4 @@
-
+#Rake::Task['zoopla:import_data'].invoke()
 
 
 namespace :zoopla do

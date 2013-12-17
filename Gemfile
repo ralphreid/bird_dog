@@ -15,11 +15,7 @@ gem 'rmagick', '2.13.2'
 gem "mini_magick"
 gem 'carrierwave'
 gem "fog"
-
-
-# gem 'nokogiri'
-
-# gem 'zoopla'
+gem 'geocoder'
 
 
 # Gems used only for assets and not required

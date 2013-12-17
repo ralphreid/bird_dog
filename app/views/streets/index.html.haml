@@ -6,12 +6,15 @@
   %tr
     %th name
     %th postcode
+    %th Pic
     %th
     
   - @streets.each do |street|
     %tr  
       %td=street.name
       %td=street.postcode
+      %td= image_tag street.image_capture.thumb if street.image_capture? 
+
       %td
         =button_group do
           =button_link_to "Show", street

@@ -4,8 +4,11 @@ name:
 = @street.name
 %br
 
-postcode:
-= @street.postcode
+- if @street.postcode?
+  postcode:
+  = @street.postcode
+
+= @street.inspect
 
 - if @street.image_capture?
-  = image_tag @street.image_capture
+  = image_tag @street.image_capture.standard
