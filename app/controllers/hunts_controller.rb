@@ -44,10 +44,17 @@ class HuntsController < ApplicationController
     redirect_to hunts_path
   end
 
-  def add
-    @hunt = Hunt.find(params[:id])
-    @hunt.properties << params[:property_id]
-  end
+  def add_property
+    hunt = Hunt.find params[:hunt_id]
+    params[:ids].each do |property_id|
+      @hunt_property = HuntProperty.create({
+        hunt_id: params[:hunt_id],
+        property_id: property_id
+      })
+    end
+
+    render nothing: true
+  end 
 
   def add_by_url
     @property = Property.find_by_details_url params["url"]

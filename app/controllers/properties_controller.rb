@@ -2,6 +2,8 @@ class PropertiesController < ApplicationController
 
   def index
     @properties = Property.all
+    
+    @hunts = current_user.hunts
   end
 
   def new

@@ -8,7 +8,8 @@ window.onload = function(){
     map = new google.maps.Map(document.getElementById("hunts-maps-street-list"),
         mapOptions);
   } 
-  initialize_maps()
+  if($("#hunts-maps-street-list").length > 0)
+    initialize_maps()
 
 
   geocoder = new google.maps.Geocoder();

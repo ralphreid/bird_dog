@@ -1,10 +1,13 @@
-
-= big_button_link_to 'Add Property', new_property_path
-%br
-%br
+.col-md-4
+.col-md-4
+  = big_button_link_to 'Add Property', new_property_path
+.col-md-4
+  = select_tag :hunt_id, options_from_collection_for_select(@hunts, "id", "name")
+  = add_button_tag "Add to a Hunt", id: "submit_hunt_property_selection"
 %table.table.table-striped#properties_table
   %thead
     %tr
+      %th 
       %th Source
       %th Price
       %th Status
@@ -16,6 +19,9 @@
   %tbody
     - @properties.each do |property|
       %tr  
+        %td
+          = check_box :property_select_checkbox, property.id,
+        {class: "property_checkbox", "data-property-id" => property.id}
         %td=property.source
         %td=property.price
         %td=property.status

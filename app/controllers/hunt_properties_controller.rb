@@ -4,14 +4,5 @@ class HuntPropertiesController < ApplicationController
     @properties = Property.all
   end
 
-  def create
-    params[:ids].each do |property_id|
-      @hunt_property = HuntProperty.create({
-        hunt_id: params[:hunt_id],
-        property_id: property_id
-      })
-    end
-
-    render nothing: true
-  end
+  
 end
