@@ -146,6 +146,9 @@ GEM
     newrelic_rpm (3.7.0.177)
     nokogiri (1.5.11)
     orm_adapter (0.5.0)
+    paper_trail (3.0.0)
+      activerecord (>= 3.0, < 5.0)
+      activesupport (>= 3.0, < 5.0)
     pg (0.17.0)
     polyglot (0.3.3)
     pry (0.9.12.4)
@@ -270,6 +273,7 @@ DEPENDENCIES
   meta_request
   mini_magick
   newrelic_rpm
+  paper_trail (~> 3.0.0)
   pg
   pry-rails
   quiet_assets
