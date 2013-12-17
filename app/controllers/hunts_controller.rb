@@ -4,6 +4,8 @@ class HuntsController < ApplicationController
     @hunts = current_user.hunts
     @hunts_properties = hunt_select(:properties)
     @hunts_streets = hunt_select(:streets)
+   
+
   end
 
   def new
@@ -46,8 +48,8 @@ class HuntsController < ApplicationController
 
   def add_street
     hunt = Hunt.find params[:hunt_id]
-    params[:ids].each do |property_id|
-      @hunt_property = HuntProperty.create({
+    params[:ids].each do |street_id|
+      @hunt_street= HuntStreet.create({
         hunt_id: params[:hunt_id],
         street_id: street_id
       })

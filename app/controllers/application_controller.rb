@@ -4,8 +4,9 @@ class ApplicationController < ActionController::Base
   helper_method :menu_pages, :current_path
 
   def menu_pages
-    {home: "/",
+    {hunts: "/hunts",
      properties: "/properties",
+     streets: "/streets",
      search: "/search"}
   end
 

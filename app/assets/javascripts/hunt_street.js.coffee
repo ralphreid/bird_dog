@@ -6,6 +6,5 @@ $ ->
     $.each checked, (index, element) ->
       ids.push $(element).data("street-id")
     
-
-    $.post("/hunt_streets/add_street", {ids: ids, hunt_id: hunt_id})
+    $.post("/hunts/add_street", {ids: ids, hunt_id: hunt_id})
     window.location.href = "/hunts/#{hunt_id}"
