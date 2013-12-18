@@ -5,61 +5,227 @@
         .form-group
           = positive_button_submit_tag
         .form-group
-          .col-md-3
+          .col-md-4
             = f.label :name
-          .col-md-9
+          .col-md-8
             = f.text_field :name
         .form-group
-          .col-md-3
+          .col-md-4
             = f.label :target_location
-          .col-md-9
+          .col-md-8
             = f.text_field :target_location, placeholder: 'London, Rome, etc.'
       .col-md-4
         .form-group
-          .col-md-3
+          .col-md-4
             = f.label :status
-          .col-md-9
+          .col-md-8
             = f.select :status, options_for_select(["Active", "Stand-by"], @status)
         .form-group
-          .col-md-3
+          .col-md-4
             = f.label :goal
-          .col-md-9
+          .col-md-8
             = f.select :goal, options_for_select(["Vacation Home", "Residential Portfolio", "Commercial Portfolio", "Parking Portfolio"], "Residential Portfolio")
-        .form-group
-          .col-md-3
-            = f.label :aquisition_strategy
-          .col-md-9
-            = f.select :aquisition_strategy, options_for_select(["Buy & Hold", "Flip", "Renovate", "Joint Venture"], "Buy & Hold")
       .col-md-4
         .form-group
-          .col-md-3
-            = f.label :goal
-          .col-md-9
-            = f.select :goal, options_for_select(["Vacation Home", "Residential Portfolio", "Commercial Portfolio", "Parking Portfolio"], "Residential Portfolio")
+          .col-md-4
+            = f.label :aquisition_strategy
+          .col-md-8
+            = f.select :aquisition_strategy, options_for_select(["Buy & Hold", "Flip", "Renovate", "Joint Venture"], "Buy & Hold")
       .col-md-12
         %h3 Further Details
-      .col-md-4
+        %hr
+      .col-md-6
         %h4 Core Financial Assumptions:
+        %hr
         .form-group
-          .col-md-3
-            = f.label :status
-          .col-md-9
-            = f.text_field :status
-      .col-md-4
+          .col-md-6
+            = f.label :price_max
+          .col-md-6
+            = f.number_field :price_max
+        .form-group
+          .col-md-6
+            = f.label :price_min
+          .col-md-6
+            = f.number_field :price_min
+        .form-group
+          .col-md-6
+            = f.label "Target Purchase Discount (%)"
+          .col-md-6
+            = f.number_field :target_purchase_discount_percent
+        .form-group
+          .col-md-6
+            = f.label :target_rent_weekly
+          .col-md-6
+            = f.number_field :target_rent_weekly
+        .form-group
+          .col-md-6
+            = f.label :down_payment_percent
+          .col-md-6
+            = f.number_field :down_payment_percent
+        .form-group
+          .col-md-6
+            = f.label 'Annual Interest Rate'
+          .col-md-6
+            = f.number_field :interest_rate_annual
+      .col-md-6
         %h4 Fee Assumptions:
+        %hr
         .form-group
-          .col-md-3
-            = f.label :status
-          .col-md-9
-            = f.text_field :status
-      .col-md-4
+          .col-md-6
+            = f.label :origination_fee
+          .col-md-6
+            = f.number_field :origination_fee
+        .form-group
+          .col-md-6
+            = f.label :stamp_duty_rate
+          .col-md-6
+            = f.number_field :stamp_duty_rate
+        .form-group
+          .col-md-6
+            = f.label :closing_costs_misc_fee
+          .col-md-6
+            = f.number_field :closing_costs_misc_fee
+        .form-group
+          .col-md-6
+            = f.label 'Vacancy Loss (%)'
+          .col-md-6
+            = f.number_field :vacancyloss_percent
+        .form-group
+          .col-md-6
+            = f.label :accounting
+          .col-md-6
+            = f.number_field :accounting
+        .form-group
+          .col-md-6
+            = f.label :advertising
+          .col-md-6
+            = f.number_field :advertising
+        .form-group
+          .col-md-6
+            = f.label :bankcharges
+          .col-md-6
+            = f.number_field :bankcharges
+      .col-md-12
         %h4 Running Costs:
-        .form-group
-          .col-md-3
-            = f.label :status
-          .col-md-9
-            = f.text_field :status
-
+        %hr
+        .col-md-4
+          .form-group
+            .col-md-6
+              = f.label :electricity
+            .col-md-6
+              = f.number_field :electricity
+          .form-group
+            .col-md-6
+              = f.label :gas
+            .col-md-6
+              = f.number_field :gas
+          .form-group
+            .col-md-6
+              = f.label :home_owner_association_fees
+            .col-md-6
+              = f.number_field :home_owner_association_fees
+          .form-group
+            .col-md-6
+              = f.label :insurance_hazard
+            .col-md-6
+              = f.number_field :insurance_hazard
+          .form-group
+            .col-md-6
+              = f.label :insurance_mortgage
+            .col-md-6
+              = f.number_field :insurance_mortgage
+          .form-group
+            .col-md-6
+              = f.label :status
+            .col-md-6
+              = f.number_field :status
+          .form-group
+            .col-md-6
+              = f.label :landscape_maintenance
+            .col-md-6
+              = f.number_field :landscape_maintenance
+          .form-group
+            .col-md-6
+              = f.label :legal
+            .col-md-6
+              = f.number_field :legal
+        .col-md-4
+          .form-group
+            .col-md-6
+              = f.label :maintenance
+            .col-md-6
+              = f.number_field :maintenance
+          .form-group
+            .col-md-6
+              = f.label :property_management_percent
+            .col-md-6
+              = f.number_field :property_management_percent
+          .form-group
+            .col-md-6
+              = f.label :permits
+            .col-md-6
+              = f.number_field :permits
+          .form-group
+            .col-md-6
+              = f.label :miscellaneous_fee
+            .col-md-6
+              = f.number_field :miscellaneous_fee
+          .form-group
+            .col-md-6
+              = f.label :pest_termite_control
+            .col-md-6
+              = f.number_field :pest_termite_control
+          .form-group
+            .col-md-6
+              = f.label :phone
+            .col-md-6
+              = f.number_field :phone
+          .form-group
+            .col-md-6
+              = f.label :postage
+            .col-md-6
+              = f.number_field :postage
+        .col-md-4
+          .form-group
+            .col-md-6
+              = f.label :referrals_commissions
+            .col-md-6
+              = f.number_field :referrals_commissions
+          .form-group
+            .col-md-6
+              = f.label :reserves
+            .col-md-6
+              = f.number_field :reserves
+          .form-group
+            .col-md-6
+              = f.label :supplies_maintenance
+            .col-md-6
+              = f.number_field :supplies_maintenance
+          .form-group
+            .col-md-6
+              = f.label :permits
+            .col-md-6
+              = f.number_field :permits
+          .form-group
+            .col-md-6
+              = f.label :supplies_office
+            .col-md-6
+              = f.number_field :supplies_office
+          .form-group
+            .col-md-6
+              = f.label :taxes_property
+            .col-md-6
+              = f.number_field :taxes_property
+          .form-group
+            .col-md-6
+              = f.label :warranties
+            .col-md-6
+              = f.number_field :warranties
+          .form-group
+            .col-md-6
+              = f.label :water_sewer
+            .col-md-6
+              = f.number_field :water_sewer
 
 
 

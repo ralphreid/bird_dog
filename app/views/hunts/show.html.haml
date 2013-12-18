@@ -1,13 +1,12 @@
-= button_link_to 'Back', hunts_path
+/ = button_link_to 'Back', hunts_path
 
 
 .col-md-6
-  source:
-  = @hunt.name
 
   = form_tag add_by_url_hunt_path(@hunt), method: :post do 
     = url_field_tag :url
-    = submit_tag "Add Property URL", :name => nil
+    / # = submit_tag "Add Property URL", :name => nil
+    = positive_button_submit_tag 'Add a Property URL'
 
   - @hunt.properties.each do |property|
     = link_to property.details_url
