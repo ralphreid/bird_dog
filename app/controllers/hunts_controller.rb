@@ -1,5 +1,7 @@
 class HuntsController < ApplicationController
 
+  before_filter :authenticate_user!
+
   def index
     @hunts = current_user.hunts
     @hunts_properties = hunt_select(:properties)

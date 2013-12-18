@@ -1,5 +1,7 @@
 class PropertiesController < ApplicationController
 
+  before_filter :authenticate_user!
+
   def index
     @properties = Property.all
     @hunts = current_user.hunts

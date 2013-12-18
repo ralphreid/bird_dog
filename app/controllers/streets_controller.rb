@@ -1,5 +1,7 @@
 class StreetsController < ApplicationController
 
+  before_filter :authenticate_user!
+  
   def index
     @streets = Street.all
     @hunts = current_user.hunts
