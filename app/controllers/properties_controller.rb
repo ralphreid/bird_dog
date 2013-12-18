@@ -8,13 +8,25 @@ class PropertiesController < ApplicationController
   end
 
   def new
-    @property = Property.new
+    @hunt_id = params[:hunt_id]
+    @property = Property.new(details_url: params[:details_url])
   end
 
   def create
     @property = Property.new(params[:property])
     if @property.save
-      redirect_to @property, notice: 'Property was successfully created!'
+      if params[:hunt_id]
+        begin
+          @hunt = Hunt.find params[:hunt_id]
+          @hunt.properties << @property
+          flash[:notice] = 'added'
+        rescue ActiveRecord::RecordInvalid
+          flash[:notice] = "already in hunt"
+        end
+        redirect_to hunt_path(@hunt)
+      else
+        redirect_to @property, notice: 'Property was successfully created!'
+      end
     else
       flash.now[:alert] = 'Property was NOT created!'
       render :new

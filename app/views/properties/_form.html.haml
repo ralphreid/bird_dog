@@ -1,6 +1,9 @@
 = semantic_form_for @property do |f|
 
   = f.actions do
+
+    = hidden_field_tag :hunt_id, @hunt_id
+
     = f.action :submit, :as => :button
     = f.action :cancel, :as => :link
     
@@ -9,7 +12,7 @@
     = f.input :price
 
     = f.label :details_url
-    = f.input :details_url
+    = f.url_field :details_url
 
     / = f.label :rent
     / = f.input :rent

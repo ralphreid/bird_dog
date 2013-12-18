@@ -3,17 +3,22 @@
 
 namespace :zoopla do
 
+  def build_query(postcode, page_number)
+    "http://api.zoopla.co.uk/api/v1/property_listings.json?postcode=#{postcode}&page_size=100&page_number=#{page_number}&api_key=#{ENV['ZOOPLA_KEY']}"
+  end
+
   desc "import zoopla data"
   task import_data: :environment do
     begin
       postcode = 'n4'
       page_number = 1
-      query = "http://api.zoopla.co.uk/api/v1/property_listings.json?postcode=#{postcode}&page_size=100&page_number=#{page_number}&api_key=#{ENV['ZOOPLA_KEY']}"
+      query = build_query(postcode, page_number)
       response = HTTParty.get(query)
       result_count = response["result_count"]
       page_count = (result_count / 100.0).ceil 
       page_count.times do |page_index|
         page_number = page_index + 1
+        query = build_query(postcode, page_number)
         response = HTTParty.get(query)
         listings = response["listing"]
         listings.each do |listing|
