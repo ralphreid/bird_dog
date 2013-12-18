@@ -1,13 +1,21 @@
 = button_link_to 'Back', hunts_path
-%br
-source:
-= @hunt.name
 
-= form_tag add_by_url_hunt_path(@hunt), method: :post do 
-  = url_field_tag :url
-  = submit_tag "Add Property URL", :name => nil
 
-- @hunt.properties.each do |property|
-  = link_to property.details_url
+.col-md-6
+  source:
+  = @hunt.name
+
+  = form_tag add_by_url_hunt_path(@hunt), method: :post do 
+    = url_field_tag :url
+    = submit_tag "Add Property URL", :name => nil
+
+  - @hunt.properties.each do |property|
+    = link_to property.details_url
    
+
+.col-md-6
+  #hunts-maps-street-list
+
+:javascript
+  window.hunt_streets = #{raw get_json_for_hunts(@hunts_streets)}
 

@@ -24,6 +24,8 @@ class HuntsController < ApplicationController
 
   def show
     @hunt = Hunt.find(params[:id])
+    @hunts_streets = hunt_select(:streets)
+    binding.pry
   end
 
   def edit
