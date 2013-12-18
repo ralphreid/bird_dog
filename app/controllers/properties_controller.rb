@@ -35,6 +35,7 @@ class PropertiesController < ApplicationController
 
   def show
     @property = Property.find(params[:id])
+    @properties = Property.all
   end
 
   def edit
@@ -57,6 +58,14 @@ class PropertiesController < ApplicationController
     redirect_to properties_path
   end
 
-
+  def add_comparable
+    property = Property.find params[:property_id]
+    params[:ids].each do |comparable_id|
+      comparable = Property.find(comparable_id)
+      property.properties << comparable
+    end
+    property.save
+    render nothing: true
+  end
 
 end

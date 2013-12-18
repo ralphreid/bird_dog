@@ -11,7 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131218121750) do
+ActiveRecord::Schema.define(:version => 20131218160703) do
+
+  create_table "comparables", :id => false, :force => true do |t|
+    t.integer "property_buy_id"
+    t.integer "property_comparable_id"
+  end
 
   create_table "hunt_properties", :force => true do |t|
     t.integer  "property_id"

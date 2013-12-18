@@ -1,0 +1,32 @@
+
+%table.table.table-striped#properties_table
+  %thead
+    %tr
+      %th 
+      %th Source
+      %th Price
+      %th Status
+      %th Address
+      %th Property Type
+      %th Bedrooms
+      %th Listing_id
+      %th 
+  %tbody
+    - @properties.each do |property|
+      %tr  
+        %td
+          = check_box :property_select_checkbox, property.id,
+        {class: "property_checkbox", "data-property-id" => property.id}
+        %td=property.source
+        %td=property.price
+        %td=property.status
+        %td=property.displayable_address
+        %td=property.property_type
+        %td=property.num_bedrooms
+        %td=link_to 'link', property.details_url, :target => '_blank'
+        %td=property.listing_id
+        %td
+          =button_group do
+            =button_link_to "Show", property
+            =button_link_to "Edit", edit_property_path(property)
+            =negative_button_link_to "Destroy", property, :confirm => 'Are you sure?', :method => :delete

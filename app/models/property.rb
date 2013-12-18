@@ -6,6 +6,8 @@ class Property < ActiveRecord::Base
 
   has_paper_trail #:only => [:price]
 
+  has_and_belongs_to_many :properties, join_table: 'comparables', foreign_key: "property_buy_id", association_foreign_key: "property_comparable_id"
+
 
 end
 

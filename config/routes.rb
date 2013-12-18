@@ -15,7 +15,11 @@ BirdDog::Application.routes.draw do
 
   root :to => 'home#index'
 
-  resources :properties
+  resources :properties do
+    member do
+      post :add_comparable
+    end
+  end
   resources :streets
   resources :hunts do
     member do 

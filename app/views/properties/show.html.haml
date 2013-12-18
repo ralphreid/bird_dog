@@ -6,25 +6,9 @@ source:
 
 = @property.inspect
 
-/ type_listing:
-/ = @property.type_listing
-/ %br
+.col-md-8
+.col-md-4
+  = add_button_tag "Add Checked as a Comparable", id: "add_comparable", data:{id: @property.id}
+  / # = select_tag :hunt_id, options_from_collection_for_select(@hunts, "id", "name")
 
-/ rent:
-/ = @property.rent
-/ %br
-
-/ rent_frequency:
-/ = @property.rent_frequency
-/ %br
-
-/ property_page:
-/ = link_to 'link', @property.property_page
-/ %br
-
-/ terms:
-/ = @property.terms
-/ %br
-
-/ listing_blurb:
-/ = @property.listing_blurb
+=render 'properties'
