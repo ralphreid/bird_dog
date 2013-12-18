@@ -6,8 +6,6 @@ class HuntsController < ApplicationController
     @hunts = current_user.hunts
     @hunts_properties = hunt_select(:properties)
     @hunts_streets = hunt_select(:streets)
-   
-
   end
 
   def new
