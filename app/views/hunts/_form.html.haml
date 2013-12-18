@@ -1,11 +1,10 @@
-= semantic_form_for @hunt do |f|
 
-  = f.actions do
-    = f.action :submit, :as => :button
-    = f.action :cancel, :as => :link
-    
-  = f.inputs :name => 'Hunt' do
+= field_set_tag 'Create a new Hunt' do
+  = form_for @hunt do |f|
+    = positive_button_submit_tag 'Create Hunt'
     = f.label :name
-    = f.input :name
+    = f.text_field :name
 
-   
+    / =f.label :status
+    / = f.radio_button('Active', 'Dormant', 'Building')
+
