@@ -1,18 +1,20 @@
 = field_set_tag 'Create a new Hunt' do
   .form-horizontal
     = form_for @hunt do |f|
-      .col-sm-5
+      .col-md-5
         .form-group
-          .col-sm-2
+          .col-md-2
             = f.label :name
-          .col-sm-10
+          .col-md-10
             = f.text_field :name
-      .col-sm-5
+      .col-md-5
         .form-group
-          .col-sm-2
-            = f.label :name
-          .col-sm-10
-            = f.text_field :name
+          .col-md-2
+            = f.label :status
+          .col-md-10
+            = f.select :status, options_for_select(["foo", "bar"], @status)
+          
+
 
 
   
