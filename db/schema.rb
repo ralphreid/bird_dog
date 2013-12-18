@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131217105520) do
+ActiveRecord::Schema.define(:version => 20131218121750) do
 
   create_table "hunt_properties", :force => true do |t|
     t.integer  "property_id"
@@ -35,8 +35,45 @@ ActiveRecord::Schema.define(:version => 20131217105520) do
     t.string   "name"
     t.integer  "user_id"
     t.string   "status"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+    t.string   "target_location"
+    t.string   "goal"
+    t.string   "aquisition_strategy"
+    t.integer  "price_max"
+    t.integer  "price_min"
+    t.decimal  "target_purchase_discount_percent"
+    t.integer  "target_rent_weekly"
+    t.decimal  "down_payment_percent"
+    t.decimal  "interest_rate_annual"
+    t.integer  "origination_fee"
+    t.decimal  "stamp_duty_rate"
+    t.integer  "closing_costs_misc_fee"
+    t.decimal  "vacancyloss_percent"
+    t.integer  "accounting"
+    t.integer  "advertising"
+    t.integer  "bankcharges"
+    t.integer  "electricity"
+    t.integer  "gas"
+    t.integer  "home_owner_association_fees"
+    t.integer  "insurance_hazard"
+    t.integer  "insurance_mortgage"
+    t.integer  "landscape_maintenance"
+    t.integer  "legal"
+    t.integer  "maintenance"
+    t.integer  "property_management_percent"
+    t.integer  "miscellaneous_fee"
+    t.integer  "permits"
+    t.integer  "pest_termite_control"
+    t.integer  "phone"
+    t.integer  "postage"
+    t.integer  "referrals_commissions"
+    t.integer  "reserves"
+    t.integer  "supplies_maintenance"
+    t.integer  "supplies_office"
+    t.integer  "taxes_property"
+    t.integer  "warranties"
+    t.integer  "water_sewer"
   end
 
   create_table "properties", :force => true do |t|

@@ -1,18 +1,76 @@
-= field_set_tag 'Create a new Hunt' do
+= field_set_tag 'Hunt Details' do
   .form-horizontal
     = form_for @hunt do |f|
-      .col-md-5
+      .col-md-4
         .form-group
-          .col-md-2
+          = positive_button_submit_tag
+        .form-group
+          .col-md-3
             = f.label :name
-          .col-md-10
+          .col-md-9
             = f.text_field :name
-      .col-md-5
         .form-group
-          .col-md-2
+          .col-md-3
+            = f.label :target_location
+          .col-md-9
+            = f.text_field :target_location, placeholder: 'London, Rome, etc.'
+      .col-md-4
+        .form-group
+          .col-md-3
             = f.label :status
-          .col-md-10
-            = f.select :status, options_for_select(["foo", "bar"], @status)
+          .col-md-9
+            = f.select :status, options_for_select(["Active", "Stand-by"], @status)
+        .form-group
+          .col-md-3
+            = f.label :goal
+          .col-md-9
+            = f.select :goal, options_for_select(["Vacation Home", "Residential Portfolio", "Commercial Portfolio", "Parking Portfolio"], "Residential Portfolio")
+        .form-group
+          .col-md-3
+            = f.label :aquisition_strategy
+          .col-md-9
+            = f.select :aquisition_strategy, options_for_select(["Buy & Hold", "Flip", "Renovate", "Joint Venture"], "Buy & Hold")
+      .col-md-4
+        .form-group
+          .col-md-3
+            = f.label :goal
+          .col-md-9
+            = f.select :goal, options_for_select(["Vacation Home", "Residential Portfolio", "Commercial Portfolio", "Parking Portfolio"], "Residential Portfolio")
+      .col-md-12
+        %h3 Further Details
+      .col-md-4
+        %h4 Core Financial Assumptions:
+        .form-group
+          .col-md-3
+            = f.label :status
+          .col-md-9
+            = f.text_field :status
+      .col-md-4
+        %h4 Fee Assumptions:
+        .form-group
+          .col-md-3
+            = f.label :status
+          .col-md-9
+            = f.text_field :status
+      .col-md-4
+        %h4 Running Costs:
+        .form-group
+          .col-md-3
+            = f.label :status
+          .col-md-9
+            = f.text_field :status
+
+
+
+
+
+
+
+
+
+
+
+
           
 
 
