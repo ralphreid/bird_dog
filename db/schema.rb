@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131218160703) do
+ActiveRecord::Schema.define(:version => 20131219202120) do
 
   create_table "comparables", :id => false, :force => true do |t|
     t.integer "property_buy_id"
@@ -114,6 +114,7 @@ ActiveRecord::Schema.define(:version => 20131218160703) do
     t.text     "agent_logo"
     t.datetime "first_published_date"
     t.datetime "last_published_date"
+    t.string   "postcode"
   end
 
   create_table "streets", :force => true do |t|

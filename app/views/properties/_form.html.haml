@@ -1,30 +1,47 @@
-= semantic_form_for @property do |f|
 
-  = f.actions do
+= field_set_tag 'Property Details' do
+  = hidden_field_tag :hunt_id, @hunt_id
+  .form-horizontal
+    = form_for @property do |f|
+      .form-group
+        .col-md-4
+          = positive_button_submit_tag
+      .form-group
+        .col-md-2
+        .col-md-2
+          = f.label :Title
+        .col-md-8
+          = f.text_field :displayable_address, placeholder: 'Good Target worth investigating..'
+      .form-group
+        .col-md-2
+        .col-md-2
+          = f.label :Website
+        .col-md-8
+          = f.url_field :details_url, placeholder: 'Copy & Paste the link to here :>'
+      .form-group
+        .col-md-2
+        .col-md-2
+          = f.label :Description
+        .col-md-8
+          = f.text_field :short_description, placeholder: 'let us know what makes this special'
+      .form-group
+        .col-md-2
+        .col-md-2
+          = f.label :postcode
+        .col-md-8
+          = f.url_field :postcode, placeholder: 'Just like, N4 7gh'
+      .form-group
+        .col-md-2
+        .col-md-2
+          = f.label :price
+        .col-md-8
+          = f.url_field :price
 
-    = hidden_field_tag :hunt_id, @hunt_id
 
-    = f.action :submit, :as => :button
-    = f.action :cancel, :as => :link
+
+
+
+
+
+
     
-  = f.inputs :name => 'Property' do
-    = f.label :price
-    = f.input :price
-
-    = f.label :details_url
-    = f.url_field :details_url
-
-    / = f.label :rent
-    / = f.input :rent
-
-    / = f.label :rent_frequency
-    / = f.input :rent_frequency
-
-    / = f.label :property_page
-    / = f.input :property_page, :as => :url
-
-    / = f.label :terms
-    / = f.input :terms
-
-    / = f.label :listing_blurb
-    / = f.input :listing_blurb
