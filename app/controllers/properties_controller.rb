@@ -39,7 +39,9 @@ class PropertiesController < ApplicationController
 
   def show
     @property = Property.find(params[:id])
-    @properties = Property.all
+    
+    # should be filtered for suitible comparables
+    @properties = Property.all  
   end
 
   def edit

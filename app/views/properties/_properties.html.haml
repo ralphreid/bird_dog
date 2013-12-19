@@ -6,6 +6,7 @@
       %th Price
       %th Bedrooms
       %th Address
+      %th Listing Status
       %th
   %tbody
     - @properties.each do |property|
@@ -18,4 +19,5 @@
         %td=property.num_bedrooms
         %td=link_to property.displayable_address, property_path(property.id)
         %td=link_to 'listing', property.details_url, :target => '_blank'
+        %td= property.listing_status
        

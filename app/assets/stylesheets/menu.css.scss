@@ -8,6 +8,16 @@
   &#hunts{
     background-image: image-url("hunt.svg");
   }
+
+  &#properties{
+    background-image: image-url("properties.svg");
+  }
+
+  &#streets{
+    background-image: image-url("street.svg");
+  }
+
+
   &.selected{
     background-color: green;
   }
