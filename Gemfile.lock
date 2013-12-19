@@ -67,6 +67,9 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
+    colorbox-rails (0.1.0)
+      jquery-rails
+      rails (>= 3.1.1)
     css3buttons (0.9.5)
       actionpack (>= 3.0.0)
     database_cleaner (1.2.0)
@@ -130,6 +133,8 @@ GEM
       multi_xml (>= 0.5.2)
     i18n (0.6.9)
     journey (1.0.4)
+    jquery-colorbox-rails (0.1.4)
+      railties (>= 3.1)
     jquery-rails (3.0.4)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
@@ -263,6 +268,7 @@ DEPENDENCIES
   capybara
   carrierwave
   coffee-rails (~> 3.2.1)
+  colorbox-rails
   css3buttons (= 0.9.5)
   database_cleaner
   devise
@@ -276,6 +282,7 @@ DEPENDENCIES
   haml-rails
   http-cookie
   httparty
+  jquery-colorbox-rails (~> 0.1.4)
   jquery-datatables-rails!
   jquery-rails
   meta_request
