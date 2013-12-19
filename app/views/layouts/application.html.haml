@@ -45,11 +45,14 @@
               %li
                 =link_to 'Logout', logout_path
 
-    - flash.each do |name, message|
-      %div(class="flash-message flash-#{name}")
-        = message
     .container  
 
+      .row
+        .col-md-9
+        .col-md-3
+          - flash.each do |key, value|
+            %div{class: flash_class(key)}
+              = value
       .row
         - if user_signed_in?
           .col-md-1
