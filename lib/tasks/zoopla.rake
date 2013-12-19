@@ -14,6 +14,7 @@ namespace :zoopla do
       page_number = 1
       query = build_query(postcode, page_number)
       response = HTTParty.get(query)
+      binding.pry
       result_count = response["result_count"]
       page_count = (result_count / 100.0).ceil 
       page_count.times do |page_index|
