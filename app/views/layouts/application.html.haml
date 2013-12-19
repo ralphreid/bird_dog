@@ -26,21 +26,38 @@
           %li
             =link_to "Login", login_path
         - if user_signed_in?
+          %li
+            =link_to 'My Hunts', hunts_path
+          %li
+            =link_to '+Hunt', new_hunt_path
+          %li
+            =link_to '+Property', new_property_path
+          %li
+            =link_to '+Street', new_street_path
           %li.dropdown
             %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
-              I would like to...
+              My Library
               %b.caret
             %ul.dropdown-menu
-              %li
-                =link_to 'My Hunts', hunts_path
-              %li
-                =link_to 'Add a Hunt', new_hunt_path
               %li
                 =link_to 'Property Library', properties_path
               %li
                 =link_to 'Street Library', streets_path
+          %li.dropdown
+            %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+              My Account
+              %b.caret
+            %ul.dropdown-menu
               %li
-                =link_to 'Add a Street', new_street_path
+                =link_to 'Project::Bird_Dog', root_path
+              %li
+                =link_to 'Evernote-', root_path
+              %li
+                =link_to 'Importio-', root_path
+              %li
+                =link_to 'Google-', root_path
+              %li
+                =link_to 'Duedil-', root_path
               %li.divider
               %li
                 =link_to 'Logout', logout_path

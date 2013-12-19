@@ -7,19 +7,20 @@
       .col-md-5
         .form-group
           .col-md-3
-            = f.label :name
+            = f.label "Let's call it..."
           .col-md-9
-            = f.text_field :name
+            = f.text_field :name, placeholder: 'Wow, what a great street...'
         .form-group
           .col-md-3
             = f.label :postcode
           .col-md-9
-            = f.text_field :postcode, placeholder: 'EC1, N1 8AF, etc.'
-        .form-group
-          .col-md-5
-            = f.label 'Image captured on Location'
-          .col-md-7
-            = f.file_field :image_capture
+            = f.text_field :postcode, placeholder: 'EC1, N1 8AF...'
+        .row
+          .form-group
+            .col-md-5
+              = f.label 'Image captured on Location'
+            .col-md-7
+              = f.file_field :image_capture
 
 
 
