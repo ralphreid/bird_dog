@@ -1,14 +1,24 @@
-=button_link_to 'Back', streets_path
-%br
-name:
-= @street.name
-%br
+.col-md-1
+.col-md-6
+  %table.table.table-striped
+    %tr
+      %th
+        Name
+      %td
+        = @street.name
+    %tr
+      %th
+        Postcode
+      %td
+        = @street.postcode
+.col-md-5
+.row
+  .col-md-1
+  .property-show.col-md-10
+    - if @street.image_capture?
+      = image_tag @street.image_capture.standard
+  .col-md-1
 
-- if @street.postcode?
-  postcode:
-  = @street.postcode
 
-= @street.inspect
 
-- if @street.image_capture?
-  = image_tag @street.image_capture.standard
+
