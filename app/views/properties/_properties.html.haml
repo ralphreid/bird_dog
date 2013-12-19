@@ -1,5 +1,6 @@
 
-%table.table.table-striped#properties_table
+/ %table.table.table-striped#properties_table
+%table#properties_table
   %thead
     %tr
       %th 
@@ -10,7 +11,7 @@
       %th Property Type
       %th Bedrooms
       %th Listing_id
-      %th 
+      / %th 
   %tbody
     - @properties.each do |property|
       %tr  
@@ -25,8 +26,8 @@
         %td=property.num_bedrooms
         %td=link_to 'link', property.details_url, :target => '_blank'
         %td=property.listing_id
-        %td
-          =button_group do
-            =button_link_to "Show", property
-            =button_link_to "Edit", edit_property_path(property)
-            =negative_button_link_to "Destroy", property, :confirm => 'Are you sure?', :method => :delete
+        / %td
+        /   =button_group do
+        /     =button_link_to "Show", property
+        /     =button_link_to "Edit", edit_property_path(property)
+        /     =negative_button_link_to "Destroy", property, :confirm => 'Are you sure?', :method => :delete

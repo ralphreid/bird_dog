@@ -4,10 +4,11 @@
   height: 70px;
   display: block;
   margin: 5px;
-  #home{
-    //this background image
+  
+  #hunts{
+    background-image: image-url("hunt.svg");
   }
   &.selected{
-    background-color: red;
+    background-color: green;
   }
 }
