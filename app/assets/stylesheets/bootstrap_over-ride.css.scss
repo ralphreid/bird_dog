@@ -21,3 +21,13 @@
   .nav.navbar-nav.navbar-right {
     padding-right: 30px;
   }
+
+  .navbar-default{
+    background-color: red;
+    border-color: #e7e7e7;
+    background-image: none;
+  }
+
+  .navbar-default .navbar-nav > li > a{
+    line-height: 100px
+  }

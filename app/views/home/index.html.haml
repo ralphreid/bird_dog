@@ -3,5 +3,6 @@
 
 %ul.slider
   - @slider.each do |pic|
-    %li=image_tag pic
+    - if pic
+      %li=image_tag pic
 

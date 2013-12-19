@@ -1,28 +1,19 @@
-
-%table.table.table-striped#data_table
+%table#data_table.table.table-striped
   %thead
     %tr
       %th 
       %th Price
       %th Bedrooms
       %th Address
-      %th Property Type
-      / %th 
+      %th Property Types
+      %th
   %tbody
     - @properties.each do |property|
       %tr  
-        %td
-          = check_box :property_select_checkbox, property.id,
-        {class: "property_checkbox", "data-property-id" => property.id}
+        %td= check_box :property_select_checkbox, property.id, {class: "property_checkbox", "data-property-id" => property.id}
         %td=number_to_currency(property.price, :unit => "£", :precision => 0)
         %td=property.num_bedrooms
         %td=link_to property.displayable_address, property_path(property.id)
         %td=property.property_type
         %td=link_to 'listing', property.details_url, :target => '_blank'
-        
-        
-        / %td
-        /   =button_group do
-        /     =button_link_to "Show", property
-        /     =button_link_to "Edit", edit_property_path(property)
-        /     =negative_button_link_to "Destroy", property, :confirm => 'Are you sure?', :method => :delete
+       
