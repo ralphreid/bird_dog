@@ -1,15 +1,26 @@
-= semantic_form_for @street do |f|
+= field_set_tag 'Street Details' do
+  .form-horizontal
+    = form_for @street do |f|
+      .col-md-2
+        .form-group
+          = positive_button_submit_tag
+      .col-md-5
+        .form-group
+          .col-md-3
+            = f.label :name
+          .col-md-9
+            = f.text_field :name
+        .form-group
+          .col-md-3
+            = f.label :postcode
+          .col-md-9
+            = f.text_field :postcode, placeholder: 'EC1, N1 8AF, etc.'
+        .form-group
+          .col-md-5
+            = f.label 'Image captured on Location'
+          .col-md-7
+            = f.file_field :image_capture
 
-  = f.actions do
-    = f.action :submit, :as => :button
-    = f.action :cancel, :as => :link
-    
-  = f.inputs :name => 'Street' do
-    = f.label :image_capture
-    = f.file_field :image_capture
 
-    = f.label :name
-    = f.input :name
 
-    = f.label :postcode
-    = f.input :postcode
+

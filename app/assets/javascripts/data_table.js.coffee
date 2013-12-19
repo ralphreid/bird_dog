@@ -1,3 +1,4 @@
 jQuery ->
-  $('#properties_table').dataTable
+  $('#data_table').dataTable
     sPaginationType: "bootstrap"
+
