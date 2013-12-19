@@ -10,9 +10,8 @@ window.onload = function(){
     
   } 
 
-  if($("#hunts-maps-street-list").length > 0)
-    initialize_maps();
-
+  if($("#hunts-maps-street-list") != [])
+    //initialize_maps();
 
 
   geocoder = new google.maps.Geocoder();

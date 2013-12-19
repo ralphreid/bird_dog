@@ -12,12 +12,18 @@
       %td
         = @street.postcode
 .col-md-5
+  #map-street
+
 .row
   .col-md-1
   .property-show.col-md-10
     - if @street.image_capture?
       = image_tag @street.image_capture.standard
   .col-md-1
+
+
+:javascript
+  window.street = #{@street.postcode.to_json}
 
 
 
