@@ -17,6 +17,8 @@ gem 'carrierwave'
 gem "fog"
 gem 'geocoder'
 gem 'paper_trail', '~> 3.0.0'
+gem 'font-awesome-sass'
+
 
 
 # Gems used only for assets and not required
