@@ -3,7 +3,11 @@ class PropertiesController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-    @properties = Property.select { |prop| prop.status == 'for_sale' }
+    # @properties = Property.select { |prop| prop.status == 'for_sale' }
+
+    properties = Property.find(:all, :order => "updated_at ASC")
+    @properties = properties.select { |prop| prop.status == 'for_sale' }
+
     @hunts = current_user.hunts
   end
 
