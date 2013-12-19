@@ -1,21 +1,34 @@
-.col-md-6
-.col-md-6
+.col-md-7
+  =button_group do
+    =button_link_to "Edit", edit_hunt_path
+    =negative_button_link_to "Destroy", @hunt, :confirm => 'Are you sure?', :method => :delete
+.col-md-5
   = form_tag add_by_url_hunt_path(@hunt), method: :post do 
     = url_field_tag :url
     = positive_button_submit_tag 'Add a Property URL'
-%ul.nav.nav-tabs
-  %li.active
-    %a{"data-toggle" => "tab", href: "#test"} All Hunts
-  %li
-    %a{"data-toggle" => "tab", href: "#tess"} All Hunts
-.tab-content
-  #test.tab-pane.active
+.col-md-12
+  %ul.nav.nav-tabs
+    %li.active
+      %a{"data-toggle" => "tab", href: "#detail"} Core Details
+    %li
+      %a{"data-toggle" => "tab", href: "#finance"} Financials
+    %li
+      %a{"data-toggle" => "tab", href: "#fee"} Fee Assumptions
+    %li
+      %a{"data-toggle" => "tab", href: "#cost"} Running Costs
 
-  #tess.tab-pane
+  .tab-content
+    #detail.tab-pane.active
+      = render partial: 'hunt_show_detail'
+    #finance.tab-pane
+      = render partial: 'hunt_show_finance'
+    #fee.tab-pane
+      = render partial: 'hunt_show_fee'
+    #cost.tab-pane
+      = render partial: 'hunt_show_cost'
 
 
-- @hunt.properties.each do |property|
-  = link_to property.details_url
 
-    
+
+     
 
