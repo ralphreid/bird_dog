@@ -1,16 +1,17 @@
-
 %table.table.table-striped
-  - @hunt.properties.each do |property|
-    %tr
-      %th
-        test
-      %td
-        test
-        = link_to property.details_url
-    %tr
-      %th
-        adsfd
-      %td
-        asdfdsa
-
+  %tr
+    %th Name
+    %td=@hunt.name
+  %tr
+    %th Status
+    %td=@hunt.status                     
+  %tr
+    %th Target location
+    %td=@hunt.target_location
+  %tr
+    %th Goal
+    %td=@hunt.goal
+  %tr
+    %th Aquisition Strategy
+    %td=@hunt.aquisition_strategy  
   

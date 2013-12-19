@@ -1,2 +1,22 @@
-- @hunt.properties.each do |property|
-  = link_to property.details_url
+%table.table.table-striped
+ %tr
+  %th Origination fee
+  %td=@hunt.origination_fee
+ %tr
+  %th Stamp duty rate
+  %td=@hunt.stamp_duty_rate
+ %tr
+  %th Closing costs misc fee
+  %td=@hunt.closing_costs_misc_fee
+ %tr
+  %th Vacancy loss (%)
+  %td=@hunt.vacancyloss_percent
+ %tr
+  %th Accounting
+  %td=@hunt.accounting
+ %tr
+  %th Advertising
+  %td=@hunt.advertising
+ %tr
+  %th Bankcharges
+  %td=@hunt.bankcharges

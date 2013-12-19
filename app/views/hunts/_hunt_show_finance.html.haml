@@ -1,2 +1,19 @@
-- @hunt.properties.each do |property|
-  = link_to property.details_url
+%table.table.table-striped
+  %tr
+    %th Max price
+    %td=@hunt.price_max
+  %tr
+    %th Min price
+    %td=@hunt.price_min
+  %tr
+    %th Target purchase discount
+    %td=@hunt.target_purchase_discount_percent
+  %tr
+    %th Target weekly rent
+    %td=@hunt.target_rent_weekly
+  %tr
+    %th Down payment percent
+    %td=@hunt.down_payment_percent
+  %tr
+    %th Annual interest rate
+    %td=@hunt.interest_rate_annual
