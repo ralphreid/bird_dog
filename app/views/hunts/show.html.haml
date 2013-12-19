@@ -1,17 +1,21 @@
 .col-md-6
-
+.col-md-6
   = form_tag add_by_url_hunt_path(@hunt), method: :post do 
     = url_field_tag :url
-    / # = submit_tag "Add Property URL", :name => nil
     = positive_button_submit_tag 'Add a Property URL'
+%ul.nav.nav-tabs
+  %li.active
+    %a{"data-toggle" => "tab", href: "#test"} All Hunts
+  %li
+    %a{"data-toggle" => "tab", href: "#tess"} All Hunts
+.tab-content
+  #test.tab-pane.active
 
-  - @hunt.properties.each do |property|
-    = link_to property.details_url
-   
+  #tess.tab-pane
 
-.col-md-6
-  #hunts-maps-street-list
 
-:javascript
-  window.hunt_streets = #{raw get_json_for_hunts(@hunts_streets)}
+- @hunt.properties.each do |property|
+  = link_to property.details_url
+
+    
 
