@@ -1,14 +1,39 @@
-/ =button_link_to 'Back', properties_path
-/ %br
-source:
-= @property.source
-%br
 
-= @property.inspect
 
-.col-md-8
+.row
+  .col-md-1
+  
+  .col-md-1
+
+.col-md-6
+  %table.table.table-striped
+    %tr
+      %th
+        Target
+      %td
+        = @property.displayable_address
+    %tr
+      %th
+        Price
+      %td
+        =number_to_currency(@property.price, :unit => "£", :precision => 0)
+.col-md-1
 .col-md-4
-  = add_button_tag "Add Checked as a Comparable", id: "add_comparable", data:{id: @property.id}
-  / # = select_tag :hunt_id, options_from_collection_for_select(@hunts, "id", "name")
+  .property-show.col-md-10
+    - if @property.image_url?
+      = image_tag @property.image_url
+  / #map-street
 
+.col-md-12
+ 
+  %h3 Go ahead, Select and Target Possible Comparables
+  = add_button_tag "Add Checked as a Comparable", id: "add_comparable", data:{id: @property.id}
+.col-md-12
+  
+
+  
+
+
+ 
+  
 =render 'properties'
