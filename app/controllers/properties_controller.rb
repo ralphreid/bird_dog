@@ -3,7 +3,7 @@ class PropertiesController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-    @properties = Property.all
+    @properties = Property.select { |prop| prop.status == 'for_sale' }
     @hunts = current_user.hunts
   end
 
