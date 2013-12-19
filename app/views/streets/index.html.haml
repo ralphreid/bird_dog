@@ -1,22 +1,23 @@
-.col-md-8
+.col-md-7
   
-.table_list.col-md-4
-  = add_button_tag "Add Checked to a Hunt", id: "submit_hunt_street_selection"
+.table_list.col-md-5
   = select_tag :hunt_id, options_from_collection_for_select(@hunts, "id", "name")
+  = add_button_tag "Add Checked to a Hunt", id: "submit_hunt_street_selection"
+  
 
 %table.table.table-striped#data_table
   %thead
     %tr
-      %th 
-      %th Location - Street - Postcode
+      %th Postcode
       %th Picture (if provided)
       %th
   %tbody
     - @streets.each do |street|
       %tr  
-        %td= check_box :street_select_checkbox, street.id,
+        %td
+          = check_box :street_select_checkbox, street.id,
           {class: "street_checkbox", "data-street-id" => street.id}
-        %td="#{street.name} #{street.postcode} #{street.city}"
+          = street.postcode
         %td= image_tag street.image_capture.thumb if street.image_capture? 
 
         %td
