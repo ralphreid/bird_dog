@@ -9,7 +9,7 @@ gem 'jquery-rails'
 gem 'http-cookie'
 gem 'devise'
 gem 'css3buttons', '0.9.5'
-gem 'formtastic'
+# gem 'formtastic'
 gem 'httparty'
 gem 'rmagick', '2.13.2'
 gem "mini_magick"
@@ -17,8 +17,8 @@ gem 'carrierwave'
 gem "fog"
 gem 'geocoder'
 gem 'paper_trail', '~> 3.0.0'
-gem 'font-awesome-sass'
-gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
+# gem 'font-awesome-sass'
+gem 'jquery-datatables-rails'
 
 
 
@@ -44,17 +44,17 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'meta_request'
   gem "rspec-rails"
-  gem 'shoulda-matchers'
-  gem "database_cleaner"
-  gem "capybara"
-  gem "factory_girl_rails"
-  gem "faker"
+  # gem 'shoulda-matchers'
+  # gem "database_cleaner"
+  # gem "capybara"
+  # gem "factory_girl_rails"
+  # gem "faker"
 end
 
 group :test do
   gem 'simplecov', :require => false
 end
 
-group :production do
-  gem 'newrelic_rpm'
-end
+# group :production do
+#   gem 'newrelic_rpm'
+# end
