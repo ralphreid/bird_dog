@@ -1,11 +1,17 @@
+- if user_signed_in? == false
+  = big_button_link_to 'Login', login_path
+  =image_tag "logo.png"
+  %h1 is Powering your HUNT
 
 
-=image_tag "logo.png"
-
-%h1 is Powering your HUNT
-
-%ul.slider
-  - @slider.each do |pic|
-    - if pic
-      %li=image_tag pic
+- if user_signed_in?
+  .col-md-6
+    %h2 So, where shall we hunt today?
+  .col-md-6
+    %ul.slider
+      - @slider.each do |pic|
+        - if pic
+          %li=image_tag pic
+  
+  
 
