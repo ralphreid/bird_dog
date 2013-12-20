@@ -3,6 +3,5 @@ $("#add_comparable").on "click", ->
   ids = []
   property_id = $(this).data("id")
   $.each checked, (index, element) -> ids.push $(element).data("property-id")
-  // console.log("ids", ids)
   $.post("/properties/"+property_id+"/add_comparable", { ids: ids, property_id: property_id })
   window.location.href = "/properties/#{id}"
