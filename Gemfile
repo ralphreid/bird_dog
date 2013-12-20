@@ -18,7 +18,7 @@ gem "fog"
 gem 'geocoder'
 gem 'paper_trail', '~> 3.0.0'
 gem 'font-awesome-sass'
-
+gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
 
 
 
@@ -28,7 +28,7 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
-  gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
+  
 end
 
 group :development, :test do
