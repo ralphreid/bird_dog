@@ -71,7 +71,7 @@ class PropertiesController < ApplicationController
       property.properties << comparable
     end
     property.save
-    render nothing: true
+    render json: {success: 'successfully added comparable'}
   end
 
 end
