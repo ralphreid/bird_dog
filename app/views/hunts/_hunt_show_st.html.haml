@@ -1,0 +1,9 @@
+%table.table.table-striped
+  %tr
+    %th Name
+    %th Postcode
+  - @hunt.streets.each do |street|
+    %tr
+      %td=street.name
+      %td=street.postcode
+      

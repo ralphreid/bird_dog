@@ -16,10 +16,14 @@
       %a{"data-toggle" => "tab", href: "#fee"} Fee Assumptions
     %li
       %a{"data-toggle" => "tab", href: "#cost"} Running Costs
-    %li
-      %a{"data-toggle" => "tab", href: "#properties"} Properties
-    %li
-      %a{"data-toggle" => "tab", href: "#streets"} Streets
+    - if @hunt.properties
+      %li
+        %a{"data-toggle" => "tab", href: "#props"} Properties
+    - if @hunt.streets
+      %li
+        %a{"data-toggle" => "tab", href: "#st"} Streets
+    
+   
 
   .tab-content
     #detail.tab-pane.active
@@ -30,10 +34,13 @@
       = render partial: 'hunt_show_fee'
     #cost.tab-pane
       = render partial: 'hunt_show_cost'
-    #properties.tab-pane
-      = render partial: 'hunt_show_cost'
-    #streets.tab-pane
-      = render partial: 'hunt_show_cost'
+    - if @hunt.properties
+      #props.tab-pane
+        = render partial: 'hunt_show_props'
+    - if @hunt.streets
+      #st.tab-pane
+        = render partial: 'hunt_show_st'
+   
 
 
 

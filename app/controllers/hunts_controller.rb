@@ -26,6 +26,7 @@ class HuntsController < ApplicationController
     @hunt = Hunt.find(params[:id])
     @hunts_streets = hunt_select(:streets)
     
+    # @properties = @hunt.properties
   end
 
   def edit

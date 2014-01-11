@@ -1,0 +1,10 @@
+%table.table.table-striped
+  %tr
+    %th Price
+    %th Beds
+    %th Location
+  - @hunt.properties.each do |property|
+    %tr
+      %td=number_to_currency(property.price, :unit => "£", :precision => 0)
+      %td=property.num_bedrooms
+      %td=link_to property.displayable_address, property_path(property.id)

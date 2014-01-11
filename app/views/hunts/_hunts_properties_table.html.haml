@@ -1,6 +1,6 @@
 %table.table.table-striped
   %tr
-    %th name
+    %th Hunt Name & List of Linked Properties
     %th
   - @hunts_properties.each do |hunt|
     %tr  
@@ -10,10 +10,10 @@
           - hunt.hunt.properties.each do |property|
             %li
               = number_to_currency(property.price, :unit => "£", :precision => 0)
+              .horizontal_spacer
               - if property.num_bedrooms
-                .horizontal_spacer
                 = property.num_bedrooms
                 Beds
               .horizontal_spacer
-              = property.displayable_address
+              = link_to property.displayable_address, property_path(property.id)
 
