@@ -2,7 +2,6 @@
   %tr
     %th name
     %th
-  = @hunts_properties.inspect
   - @hunts_properties.each do |hunt|
     %tr  
       %td
@@ -10,5 +9,11 @@
         %ul
           - hunt.hunt.properties.each do |property|
             %li
-              = property.inspect
+              = number_to_currency(property.price, :unit => "£", :precision => 0)
+              - if property.num_bedrooms
+                .horizontal_spacer
+                = property.num_bedrooms
+                Beds
+              .horizontal_spacer
+              = property.displayable_address
 
