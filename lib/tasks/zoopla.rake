@@ -4,7 +4,8 @@
 namespace :zoopla do
 
   def build_query(postcode, page_number)
-    "http://api.zoopla.co.uk/api/v1/property_listings.json?postcode=#{postcode}&page_size=100&page_number=#{page_number}&api_key=#{ENV['ZOOPLA_KEY']}"
+    "http://api.zoopla.co.uk/api/v1/property_listings.json?postcode=
+    #{postcode}&page_size=100&page_number=#{page_number}&api_key=#{ENV['ZOOPLA_KEY']}"
   end
 
   desc "import zoopla data"
