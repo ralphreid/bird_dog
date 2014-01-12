@@ -13,13 +13,17 @@
       = render partial: 'layout'
     #notes.tab-pane
       = render partial: 'notes'
+  .vertical_spacer
 .col-md-4
   .map#map-street
 .col-md-4
   .property-show.col-md-10
     - if @property.image_url?
       = image_tag @property.image_url
+
 .col-md-12
+  .vertical_spacer
+  .vertical_spacer
   %h2 Comparables
   = add_button_tag "Add Checked as a Comparable", id: "add_comparable", data:{id: @property.id}
   .vertical_spacer

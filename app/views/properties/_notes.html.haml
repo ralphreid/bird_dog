@@ -1,3 +1,15 @@
 .vertical_spacer
-  %h2 Notes, Comments Features in the next sprint
+  %h2 Coming Soon - Notes, Comments Features in the next sprint
+  %table.table.table-striped
+    %tr
+      %th Agent
+      %td
+        =@property.agent_name
+        @
+        =@property.agent_phone
+    %tr
+      %th
+        Description
+      %td
+        = @property.short_description.truncate(100)
        

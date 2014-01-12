@@ -14,4 +14,11 @@
     %tr
       %th Beds
       %td=@property.num_bedrooms
+    %tr
+      %th Postal Area
+      %td=@property.outcode
+    %tr
+      %th Listing
+      %td=link_to 'Link', @property.details_url
+    
        

@@ -1,13 +1,12 @@
 .vertical_spacer
   %table.table.table-striped
     %tr
-      %th
-        Target
-      %td
-        = @property.displayable_address
+      %th Property Type
+      %td=@property.property_type
     %tr
-      %th
-        Price
-      %td
-        =number_to_currency(@property.price, :unit => "£", :precision => 0)
+      %th Baths
+      %td=@property.num_bathrooms
+    %tr
+      %th Floors
+      %td=@property.num_floors
        
