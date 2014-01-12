@@ -9,7 +9,6 @@ gem 'jquery-rails'
 gem 'http-cookie'
 gem 'devise'
 gem 'css3buttons', '0.9.5'
-# gem 'formtastic'
 gem 'httparty'
 gem 'rmagick', '2.13.2'
 gem "mini_magick"
@@ -17,7 +16,6 @@ gem 'carrierwave'
 gem "fog"
 gem 'geocoder'
 gem 'paper_trail', '~> 3.0.0'
-# gem 'font-awesome-sass'
 gem 'jquery-datatables-rails'
 
 
@@ -28,7 +26,6 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
-  
 end
 
 group :development, :test do
@@ -36,19 +33,12 @@ group :development, :test do
   gem "rails-erd"
   gem 'erb2haml' # then run: rake haml:replace_erbs
   gem 'pry-rails'
-  # gem 'pry-byebug'
-  # gem 'pry-stack_explorer'
   gem 'annotate'
   gem 'quiet_assets'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'meta_request'
   gem "rspec-rails"
-  # gem 'shoulda-matchers'
-  # gem "database_cleaner"
-  # gem "capybara"
-  # gem "factory_girl_rails"
-  # gem "faker"
 end
 
 group :test do
