@@ -3,11 +3,7 @@ class PropertiesController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-    # @properties = Property.select { |prop| prop.status == 'for_sale' }
-
-    properties = Property.find(:all, :order => "updated_at ASC")
-    @properties = properties.select { |prop| prop.status == 'for_sale' }
-
+    @properties = Property.where(status: :for_sale)
     @hunts = current_user.hunts
   end
 
@@ -39,9 +35,10 @@ class PropertiesController < ApplicationController
 
   def show
     @property = Property.find(params[:id])
-    
-    # should be filtered for suitible comparables
-    @properties = Property.all  
+
+    # FEATURE TO ADD - should be filtered for suitible comparables using a relation algorithm
+    beds = @property.num_bedrooms
+    @properties = Property.where(status: :to_rent, num_bedrooms: beds)
   end
 
   def edit
