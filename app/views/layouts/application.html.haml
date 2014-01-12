@@ -65,15 +65,16 @@
       .row
         - if user_signed_in?
           .col-md-1
-            - menu_pages.each do |page|
-              -if current_path == page[1]
-                %a.menu-item.selected{href: page[1], id:page[0]}
-                  .menu-icon
-                  .menu-text= page[0]
-              - else
-                %a.menu-item{href: page[1], id:page[0]}
-                  .menu-icon
-                  .menu-text= page[0]
+            .tablet
+              - menu_pages.each do |page|
+                -if current_path == page[1]
+                  %a.menu-item.selected{href: page[1], id:page[0]}
+                    .menu-icon
+                    .menu-text= page[0]
+                - else
+                  %a.menu-item{href: page[1], id:page[0]}
+                    .menu-icon
+                    .menu-text= page[0]
         .col-md-11
           = yield
 
