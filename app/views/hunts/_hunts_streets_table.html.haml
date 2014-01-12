@@ -1,18 +1,19 @@
-
-
 %table.table.table-striped
   %tr
-    %th name
+    %th Hunt Name & List of Linked Streets
     %th
-  = @hunts_streets.inspect
   - @hunts_streets.each do |hunt|
     %tr  
-      %td.col-md-6
+      %td
         =hunt.hunt.name
         %ul
           - hunt.hunt.streets.each do |street|
             %li
-              = street.inspect
+              = street.postcode
+              .horizontal_spacer
+              -if street.name
+                = street.name
+              
       
 
 
