@@ -38,7 +38,8 @@ class PropertiesController < ApplicationController
 
     # FEATURE TO ADD - should be filtered for suitible comparables using a relation algorithm
     beds = @property.num_bedrooms
-    @properties = Property.where(status: :to_rent, num_bedrooms: beds)
+    @properties_rent = Property.where(status: :to_rent, num_bedrooms: beds)
+    @properties_sale = Property.where(status: :for_sale, num_bedrooms: beds)
   end
 
   def edit

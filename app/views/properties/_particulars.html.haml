@@ -1,0 +1,13 @@
+.vertical_spacer
+  %table.table.table-striped
+    %tr
+      %th
+        Target
+      %td
+        = @property.displayable_address
+    %tr
+      %th
+        Price
+      %td
+        =number_to_currency(@property.price, :unit => "£", :precision => 0)
+       

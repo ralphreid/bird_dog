@@ -1,5 +1,5 @@
 .vertical_spacer
-%table#data_table.table.table-striped
+%table#data_table-2.table.table-striped
   %thead
     %tr
       %th ID
@@ -10,7 +10,7 @@
       %th Listing Status
       %th
   %tbody
-    - @properties.each do |property|
+    - @properties_sale.each do |property|
       %tr
         %td
           = check_box :property_select_checkbox, property.id, {class: "property_checkbox", "data-property-id" => property.id}

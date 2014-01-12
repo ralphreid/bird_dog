@@ -10,7 +10,7 @@
       %th Listing Status
       %th
   %tbody
-    - @properties.each do |property|
+    - @properties_rent.each do |property|
       %tr
         %td
           = check_box :property_select_checkbox, property.id, {class: "property_checkbox", "data-property-id" => property.id}

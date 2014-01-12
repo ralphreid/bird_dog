@@ -2,7 +2,6 @@
   .table_list.col-md-8
     = select_tag :hunt_id, options_from_collection_for_select(@hunts, "id", "name")
     = add_button_tag "Add Checked to a Hunt", id: "submit_hunt_property_selection"
-    
 
 =render 'properties'
 
