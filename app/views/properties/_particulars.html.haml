@@ -1,13 +1,17 @@
 .vertical_spacer
   %table.table.table-striped
     %tr
-      %th
-        Target
-      %td
-        = @property.displayable_address
+      %th Target
+      %td 
+        %h3=@property.displayable_address
     %tr
-      %th
-        Price
-      %td
-        =number_to_currency(@property.price, :unit => "£", :precision => 0)
+      %th Price
+      %td=number_to_currency(@property.price, :unit => "£", :precision => 0)
+    -if @property_yield_max
+      %tr
+        %th Max Yield (%)
+        %td=@property_yield_max
+    %tr
+      %th Beds
+      %td=@property.num_bedrooms
        

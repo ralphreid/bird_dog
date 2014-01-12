@@ -38,8 +38,16 @@ class PropertiesController < ApplicationController
 
     # FEATURE TO ADD - should be filtered for suitible comparables using a relation algorithm
     beds = @property.num_bedrooms
+    @properties = @property.properties
     @properties_rent = Property.where(status: :to_rent, num_bedrooms: beds)
     @properties_sale = Property.where(status: :for_sale, num_bedrooms: beds)
+
+    # FEATURE TO ADD - model methods enabling calculations to be used elsewhere
+    unless @properties.empty?
+      max_property_rent = @properties.where(status: :to_rent).order('price DESC').first.price
+      annual_rental_income_max = max_property_rent.to_f * 52
+      @property_yield_max = ((annual_rental_income_max / @property.price) * 100).round(1)
+    end
   end
 
   def edit
@@ -69,6 +77,7 @@ class PropertiesController < ApplicationController
       property.properties << comparable
     end
     property.save
+    # redirect_to property_path (property)
     render json: {success: 'successfully added comparable'}
   end
 

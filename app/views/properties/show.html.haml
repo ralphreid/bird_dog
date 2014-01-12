@@ -20,17 +20,21 @@
     - if @property.image_url?
       = image_tag @property.image_url
 .col-md-12
-  %h2 Possible Comparables
+  %h2 Comparables
   = add_button_tag "Add Checked as a Comparable", id: "add_comparable", data:{id: @property.id}
   .vertical_spacer
 .col-md-12
   %ul.nav.nav-tabs
     %li.active
+      %a{"data-toggle" => "tab", href: "#comp_list"} Compariables List
+    %li
       %a{"data-toggle" => "tab", href: "#comp_rent"} Possible Comps For RENT
     %li
       %a{"data-toggle" => "tab", href: "#comp_sale"} Possible Comps For SALE
   .tab-content
-    #comp_rent.tab-pane.active
+    #comp_list.tab-pane.active
+      = render partial: 'properties'
+    #comp_rent.tab-pane
       = render partial: 'properties_rent'
     #comp_sale.tab-pane
       = render partial: 'properties_sale'
