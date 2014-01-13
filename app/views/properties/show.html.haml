@@ -14,14 +14,14 @@
     #notes.tab-pane
       = render partial: 'notes'
   .vertical_spacer
-.col-md-4
+.col-md-4.tablet
   .map#map-street
-.col-md-4
+.col-md-4.tablet
   .property-show.col-md-10
     - if @property.image_url?
       = image_tag @property.image_url
 
-.col-md-12
+.col-md-11
   .vertical_spacer
   .vertical_spacer
   %h2 Comparables
